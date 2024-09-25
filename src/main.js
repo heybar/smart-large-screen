@@ -5,7 +5,6 @@ import store from './store'
 // // 引入字体的文件
 // import './assets/font/iconfont.css'
 // 引入全局的样式文件
-import './assets/css/base.css'
 import './assets/css/index.css'
 import axios from 'axios'
 import SocketService from '@/utils/socket_service'
