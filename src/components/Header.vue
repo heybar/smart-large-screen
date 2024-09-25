@@ -62,16 +62,18 @@ export default {
       font-size: 25px;
       display: inline-block;
       width: 150px;
-      text-shadow: 2px 2px 2px green;
       cursor: pointer;
+      color: #96b4d2;
     }
 
     :hover {
-      background-color: white;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5));
+      color: #4c8dd2;
     }
 
     .active {
-      background-color: white;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5));
+      color: #4c8dd2;
     }
   }
 
