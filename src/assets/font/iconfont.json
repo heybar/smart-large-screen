@@ -1,0 +1,16 @@
+{
+  "id": "4695575",
+  "name": "大屏",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5063241",
+      "name": "水滴",
+      "font_class": "water-drop",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

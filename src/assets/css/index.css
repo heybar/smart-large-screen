@@ -9,7 +9,7 @@ body,
 html {
   width: 1920px;
   height: 100%;
-  color: #333;
+  color: #eee;
   /* overflow: hidden;*/
   background: url(../pictures/bg.jpg);
   background-size: 100% auto;

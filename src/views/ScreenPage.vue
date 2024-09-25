@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!--header-->
-    <div class="header">
+    <!-- <div class="header">
       <div class="title">能源基地调控系统</div>
       <div class="menu">
         <div class="router-button">首页</div>
@@ -15,7 +15,7 @@
       <div class="clock">
         2024年8月10日 10:15:30
       </div>
-    </div>
+    </div> -->
     <div class="sub-title">
       风光火储能源基地调控系统
     </div>
@@ -23,15 +23,15 @@
       <div class="charts-left">
         <div class="table-container">
           <div class="table-title"></div>
-          <AssetsStatistics></AssetsStatistics>
-        </div>
-        <div class="table-container">
-          <div class="table-title"></div>
-          <LoadDetection></LoadDetection>
+          <PowerGeneration></PowerGeneration>
         </div>
         <div class="table-container">
           <div class="table-title"></div>
           <UnitStatus></UnitStatus>
+        </div>
+        <div class="table-container">
+          <div class="table-title"></div>
+          <AssetsStatistics></AssetsStatistics>
         </div>
       </div>
       <div class="charts-center">
@@ -40,14 +40,17 @@
         </div>
       </div>
       <div class="charts-right">
-        <div class="">
-          <PowerGeneration></PowerGeneration>
+        <div class="right-charts-container">
+          <LoadDetection></LoadDetection>
+
         </div>
-        <div class="center-chart">
+        <div class="right-charts-container">
           <ResourceOverview></ResourceOverview>
         </div>
-        <div class="bottom-chart">
-
+        <div class="right-charts-container">
+          <Example></Example>
+        </div>
+        <div class="right-charts-container">
         </div>
       </div>
     </div>
@@ -60,7 +63,7 @@ import LoadDetection from '../components/LoadDetection';
 import PowerGeneration from '../components/PowerGeneration';
 import ResourceOverview from '../components/ResourceOverview';
 import UnitStatus from '../components/UnitStatus';
-
+import Example from '../components/Example.vue'
 export default {
   components: {
     AssetsStatistics,
@@ -68,6 +71,7 @@ export default {
     PowerGeneration,
     ResourceOverview,
     UnitStatus,
+    Example
   }
 }
 </script>
@@ -76,41 +80,6 @@ export default {
 .container {
   width: 1920px;
   height: 1080px;
-  color: #eeeeee;
-
-
-  .header {
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    text-align: center;
-    user-select: none;
-
-    .title {
-      display: inline-block;
-      width: 400px;
-      font-size: 35px;
-      text-shadow: 8px 8px 8px green;
-      padding: 0 30px;
-    }
-
-    .menu {
-      display: inline-block;
-
-      .router-button {
-        font-size: 25px;
-        display: inline-block;
-        width: 150px;
-      }
-    }
-
-    .clock {
-      display: inline-block;
-      width: 400px;
-      font-size: 25px;
-      padding: 0 30px;
-    }
-  }
 
   .sub-title {
     font-size: 30px;
@@ -125,7 +94,7 @@ export default {
     .charts-left {
       width: 570px;
       height: 925px;
-      background-color: skyblue;
+      // background-color: skyblue;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -141,13 +110,22 @@ export default {
 
       width: 700px;
       height: 925px;
-      background-color: skyblue;
+      // background-color: skyblue;
     }
 
     .charts-right {
       width: 570px;
       height: 925px;
-      background-color: skyblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // background-color: skyblue;
+
+      .right-charts-container {
+        width: 100%;
+        height: 220px;
+        border: 1px solid red;
+      }
     }
   }
 }
