@@ -126,6 +126,15 @@ export default {
       width: 570px;
       height: 925px;
       background-color: skyblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .table-container {
+        width: 100%;
+        height: 280px;
+        border: 1px solid red;
+      }
     }
 
     .charts-center {
