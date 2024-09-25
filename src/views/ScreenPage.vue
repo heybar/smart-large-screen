@@ -119,7 +119,23 @@ export default {
   }
 
   .charts-content {
+    display: flex;
+    justify-content: space-around;
+
     .charts-left {
+      width: 570px;
+      height: 925px;
+      background-color: skyblue;
+    }
+
+    .charts-center {
+
+      width: 700px;
+      height: 925px;
+      background-color: skyblue;
+    }
+
+    .charts-right {
       width: 570px;
       height: 925px;
       background-color: skyblue;
