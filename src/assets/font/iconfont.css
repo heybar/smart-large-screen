@@ -1,8 +1,6 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4695575 */
-  src: url('iconfont.woff2?t=1727266478327') format('woff2'),
-       url('iconfont.woff?t=1727266478327') format('woff'),
-       url('iconfont.ttf?t=1727266478327') format('truetype');
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1727273997923') format('truetype');
 }
 
 .iconfont {
@@ -13,7 +11,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-water-drop:before {
+.icon-guangfufadian:before {
+  font-size: 40px;
+  color: yellow;
   content: "\e600";
+}
+
+.icon-fengjilv:before {
+  content: "\e602";
+  font-size: 40px;
+  color: aqua;
+}
+
+.icon-shandian:before {
+  content: "\e60f";
+}
+
+.icon-zhongwuranjuece:before {
+  font-size: 40px;
+  color: #fff;
+  content: "\e612";
+}
+
+.icon-xudianchizhengchang:before {
+  font-size: 40px;
+  color: greenyellow;
+  content: "\e60d";
 }
 
