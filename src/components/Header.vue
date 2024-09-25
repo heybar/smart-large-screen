@@ -2,6 +2,8 @@
   <div class="header">
     <div class="title">能源基地调控系统</div>
     <div class="menu">
+
+
       <div class="router-button">首页</div>
       <div class="router-button">能量检测</div>
       <div class="router-button">能量管理</div>
@@ -17,7 +19,20 @@
 </template>
 
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      activeName: 'second'
+    };
+  },
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
+    }
+  }
+}
+</script>
 
 
 <style lang="less">
@@ -27,6 +42,7 @@
   line-height: 80px;
   text-align: center;
   user-select: none;
+  display: flex;
 
   .title {
     display: inline-block;
@@ -38,11 +54,13 @@
 
   .menu {
     display: inline-block;
+    width: 1050px;
 
     .router-button {
       font-size: 25px;
       display: inline-block;
       width: 150px;
+      text-shadow: 2px 2px 2px green;
     }
   }
 

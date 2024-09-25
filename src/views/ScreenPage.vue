@@ -36,7 +36,7 @@
       </div>
       <div class="charts-center">
         <div class="map">
-
+          <Map></Map>
         </div>
       </div>
       <div class="charts-right">
@@ -64,6 +64,7 @@ import PowerGeneration from '../components/PowerGeneration';
 import ResourceOverview from '../components/ResourceOverview';
 import UnitStatus from '../components/UnitStatus';
 import Example from '../components/Example.vue'
+import Map from '../components/Map.vue'
 export default {
   components: {
     AssetsStatistics,
@@ -71,7 +72,8 @@ export default {
     PowerGeneration,
     ResourceOverview,
     UnitStatus,
-    Example
+    Example,
+    Map
   }
 }
 </script>
@@ -110,7 +112,12 @@ export default {
 
       width: 700px;
       height: 925px;
+
       // background-color: skyblue;
+      .map {
+        width: 100%;
+        height: 560px;
+      }
     }
 
     .charts-right {
