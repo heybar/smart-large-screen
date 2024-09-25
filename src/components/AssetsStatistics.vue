@@ -14,7 +14,7 @@
           <div class="grid-content">100</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">风机数量(台)</div>
+          <div class="grid-content">风机数量</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content">100</div>
@@ -23,55 +23,55 @@
 
       <el-row>
         <el-col :span="2">
-          <div class="grid-content">风电</div>
+          <div class="grid-content">光电</div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content">装机容量(MW)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content">100</div>
+          <div class="grid-content">无</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">风机数量(台)</div>
+          <div class="grid-content">逆变器数量</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content">100</div>
+          <div class="grid-content">无</div>
         </el-col>
       </el-row>
 
       <el-row>
         <el-col :span="2">
-          <div class="grid-content">风电</div>
+          <div class="grid-content">火电</div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content">装机容量(MW)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content">100</div>
+          <div class="grid-content">无</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">风机数量(台)</div>
+          <div class="grid-content">发电机组</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content">100</div>
+          <div class="grid-content">无</div>
         </el-col>
       </el-row>
 
       <el-row>
         <el-col :span="2">
-          <div class="grid-content">风电</div>
+          <div class="grid-content">储能</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">装机容量(MW)</div>
+          <div class="grid-content">储能容量(MW)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content">100</div>
+          <div class="grid-content">无</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">风机数量(台)</div>
+          <div class="grid-content">集装箱数量</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content">100</div>
+          <div class="grid-content">无</div>
         </el-col>
       </el-row>
     </div>
