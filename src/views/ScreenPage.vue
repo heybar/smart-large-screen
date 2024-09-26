@@ -52,10 +52,10 @@
         <div class="right-charts-container">
           <ResourceOverview></ResourceOverview>
         </div>
-        <div class="right-charts-container">
+        <div class="rightbootom-container">
           <Example></Example>
         </div>
-        <div class="right-charts-container">
+        <div class="right-bottom-container">
           <Bottom></Bottom>
         </div>
 
@@ -159,6 +159,16 @@ export default {
       .right-charts-container {
         width: 100%;
         height: 280px;
+        border: 1px solid red;
+      }
+      .rightbottom-container{
+        width: 100%;
+        height: 100px;
+        border: 1px solid red;
+      }
+      .right-bottom-container{
+        width: 100%;
+        height: 100px;
         border: 1px solid red;
       }
     }
