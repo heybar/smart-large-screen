@@ -1,4 +1,4 @@
-<!-- 资源概况 -->
+<!-- 储能电池 -->
 <template>
   <div>
     <div class="t_title">储能电池</div>

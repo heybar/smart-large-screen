@@ -38,11 +38,16 @@
         <div class="map">
           <Map></Map>
         </div>
+        <div class="type-button">
+          <ButtonGroup></ButtonGroup>
+        </div>
+        <div class="line-chart">
+          <LineChart></LineChart>
+        </div>
       </div>
       <div class="charts-right">
         <div class="right-charts-container">
           <LoadDetection></LoadDetection>
-
         </div>
         <div class="right-charts-container">
           <ResourceOverview></ResourceOverview>
@@ -53,6 +58,7 @@
         <div class="right-charts-container">
           <Bottom></Bottom>
         </div>
+
       </div>
     </div>
   </div>
@@ -67,6 +73,9 @@ import UnitStatus from '../components/UnitStatus';
 import Example from '../components/Example.vue';
 import Map from '../components/Map.vue';
 import Bottom from '../components/Bottom.vue';
+import LineChart from '../components/LineChart';
+import ButtonGroup from '../components/ButtonGroup';
+
 export default {
   components: {
     AssetsStatistics,
@@ -76,7 +85,10 @@ export default {
     UnitStatus,
     Example,
     Bottom,
-    Map
+    Map,
+    LineChart,
+    ButtonGroup
+
   }
 }
 </script>
@@ -115,11 +127,24 @@ export default {
 
       width: 700px;
       height: 925px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       // background-color: skyblue;
       .map {
         width: 100%;
-        height: 560px;
+        height: 540px;
+      }
+
+      .type-button {
+        width: 100%;
+        height: 40px;
+      }
+
+      .line-chart {
+        width: 100%;
+        height: 320px;
       }
     }
 
@@ -133,7 +158,7 @@ export default {
 
       .right-charts-container {
         width: 100%;
-        height: 220px;
+        height: 280px;
         border: 1px solid red;
       }
     }
