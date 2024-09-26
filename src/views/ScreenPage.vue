@@ -96,7 +96,7 @@ export default {
 <style lang="less">
 .container {
   width: 1920px;
-  height: 1080px;
+  height: 1000px;
 
   .sub-title {
     font-size: 30px;
