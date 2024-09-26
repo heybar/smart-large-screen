@@ -37,11 +37,14 @@ export default {
   width: 100px;
   height: 40px;
   text-align: center;
-  transform: skewX(-45deg);
+  transform: skewX(-35deg);
+  border-radius: 5px;
+  cursor: pointer;
 
   div {
+    font-size: 18px;
     color: white;
-    transform: skewX(45deg);
+    transform: skewX(35deg);
   }
 }
 </style>

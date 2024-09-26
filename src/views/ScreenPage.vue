@@ -119,7 +119,7 @@ export default {
       .table-container {
         width: 100%;
         height: 280px;
-        border: 1px solid red;
+        // border: 1px solid red;
       }
     }
 
@@ -159,17 +159,19 @@ export default {
       .right-charts-container {
         width: 100%;
         height: 280px;
-        border: 1px solid red;
+        // border: 1px solid red;
       }
-      .rightbottom-container{
+
+      .rightbottom-container {
         width: 100%;
         height: 100px;
-        border: 1px solid red;
+        // border: 1px solid red;
       }
-      .right-bottom-container{
+
+      .right-bottom-container {
         width: 100%;
         height: 100px;
-        border: 1px solid red;
+        // border: 1px solid red;
       }
     }
   }
