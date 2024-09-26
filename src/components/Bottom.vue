@@ -34,7 +34,7 @@
 <style>
 .head_container{
     margin-left: 40px;
-    margin-top: 60px;
+    margin-top: 20px;
     .icon_content{
 
     }
