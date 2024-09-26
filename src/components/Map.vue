@@ -69,13 +69,14 @@ export default {
   },
   methods: {
     async initChart() {
+      let that = this
       this.chartInstance = echarts.init(this.$refs["chartsDOM"])
       const res = await axios.get('https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json')
       echarts.registerMap('neimenggu', { geoJSON: res.data })
 
       this.chartInstance.setOption(this.initOption)
-      window.onresize = () => {
-        this.initOption = {
+      window.addEventListener('resize', () => {
+        that.initOption = {
           // title: {
           //   text: '▎ 商家分布',
           //   left: 20,
@@ -98,9 +99,9 @@ export default {
             orient: 'vertical'
           }
         }
-        this.chartInstance.setOption(this.initOption)
-        this.chartInstance.resize(this.initOption)
-      }
+        that.chartInstance.setOption(that.initOption)
+        that.chartInstance.resize(that.initOption)
+      })
     }
   }
 }
@@ -110,7 +111,7 @@ export default {
 <style lang='less' scoped>
 .com-container {
   width: 100%;
-  height: 560px;
+  height: 100%;
 }
 
 .charts-dom {

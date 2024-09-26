@@ -1,11 +1,76 @@
-<!-- 负荷检测 -->
+<!-- 发电统计 -->
 <template>
-  <div>
-    负荷检测
+  <div class='pi-container'>
+    <div class='pi-chart' ref='piChart'></div>
   </div>
 </template>
 
 <script>
+import * as echarts from 'echarts'
 export default {
+  data() {
+    return {
+      chartInstance: null,
+      chartOption: {}
+    }
+  },
+  mounted() {
+    this.initChart()
+  },
+  methods: {
+    initChart() {
+      let that = this
+      this.chartInstance = echarts.init(this.$refs["piChart"])
+      this.chartOption = {
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          orient: 'horizontal',
+          top: '10%',
+          left: 'center',
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        series: [
+          {
+            top: '20%',
+            name: 'Access From',
+            type: 'pie',
+            radius: '50%',
+            data: [
+              { value: 30, name: '火电', itemStyle: { color: '#F94F74' } },
+              { value: 40, name: '风电', itemStyle: { color: '#766BEE' } },
+              { value: 30, name: '水电', itemStyle: { color: '#42B2FE' } },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          }
+        ]
+      };
+      this.chartInstance.setOption(this.chartOption)
+      window.addEventListener('resize', () => {
+        that.chartInstance.resize(this.chartOption)
+      })
+
+    }
+  }
 }
 </script>
+<style lang='less' scoped>
+.pi-container {
+  width: 100%;
+  height: 280px;
+}
+
+.pi-chart {
+  width: 570px;
+  height: 280px;
+}
+</style>
