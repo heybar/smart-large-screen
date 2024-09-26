@@ -39,6 +39,41 @@
       "font_class": "xudianchizhengchang",
       "unicode": "e60d",
       "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "10745499",
+      "name": "电池",
+      "font_class": "dianchi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "22994368",
+      "name": "map_btn_hzmarker_normal",
+      "font_class": "map_btn_hzmarker_normal",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "33759934",
+      "name": "api_mining_hover",
+      "font_class": "api_mining_hover",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "37955406",
+      "name": "绿色能源",
+      "font_class": "lvsenengyuan",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "38385660",
+      "name": "icon 水滴 地图显示",
+      "font_class": "a-iconshuididituxianshi",
+      "unicode": "e628",
+      "unicode_decimal": 58920
     }
   ]
 }
