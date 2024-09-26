@@ -1,6 +1,7 @@
 <!-- 发电统计 -->
 <template>
   <div class='pi-container'>
+    <div class="chart-title">资产统计</div>
     <div class='pi-chart' ref='piChart'></div>
   </div>
 </template>
@@ -27,7 +28,6 @@ export default {
         },
         legend: {
           orient: 'horizontal',
-          top: '10%',
           left: 'center',
           textStyle: {
             color: '#fff'
@@ -35,7 +35,6 @@ export default {
         },
         series: [
           {
-            top: '20%',
             name: 'Access From',
             type: 'pie',
             radius: '50%',
@@ -67,10 +66,18 @@ export default {
 .pi-container {
   width: 100%;
   height: 280px;
-}
 
-.pi-chart {
-  width: 570px;
-  height: 280px;
+  .chart-title {
+    font-size: 25px;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+
+  .pi-chart {
+    width: 570px;
+    height: 230px;
+  }
+
 }
 </style>
