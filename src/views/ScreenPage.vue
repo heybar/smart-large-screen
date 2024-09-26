@@ -51,6 +51,7 @@
           <Example></Example>
         </div>
         <div class="right-charts-container">
+          <Bottom></Bottom>
         </div>
       </div>
     </div>
@@ -63,8 +64,9 @@ import LoadDetection from '../components/LoadDetection';
 import PowerGeneration from '../components/PowerGeneration';
 import ResourceOverview from '../components/ResourceOverview';
 import UnitStatus from '../components/UnitStatus';
-import Example from '../components/Example.vue'
-import Map from '../components/Map.vue'
+import Example from '../components/Example.vue';
+import Map from '../components/Map.vue';
+import Bottom from '../components/Bottom.vue';
 export default {
   components: {
     AssetsStatistics,
@@ -73,6 +75,7 @@ export default {
     ResourceOverview,
     UnitStatus,
     Example,
+    Bottom,
     Map
   }
 }

@@ -8,7 +8,7 @@
           <div class="grid-content">风电</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">装机容量(MW)</div>
+          <div class="grid-content">装机容量(MWh)</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content">100</div>
@@ -26,7 +26,7 @@
           <div class="grid-content">光电</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">装机容量(MW)</div>
+          <div class="grid-content">装机容量(MWh)</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content">无</div>
@@ -44,7 +44,7 @@
           <div class="grid-content">火电</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">装机容量(MW)</div>
+          <div class="grid-content">装机容量(MWh)</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content">无</div>
@@ -62,7 +62,7 @@
           <div class="grid-content">储能</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content">储能容量(MW)</div>
+          <div class="grid-content">储能容量(MWh)</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content">无</div>

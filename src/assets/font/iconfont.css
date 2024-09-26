@@ -1,41 +1,68 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1727273997923') format('truetype');
+  src: url('iconfont.ttf?t=1727357167801') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
+  font-size: 30px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-guangfufadian:before {
-  font-size: 40px;
-  color: yellow;
   content: "\e600";
+  color: lightyellow;
 }
 
 .icon-fengjilv:before {
   content: "\e602";
-  font-size: 40px;
   color: aqua;
 }
 
 .icon-shandian:before {
   content: "\e60f";
+  color: yellow;
+  font-size: 40px;
 }
 
 .icon-zhongwuranjuece:before {
-  font-size: 40px;
-  color: #fff;
   content: "\e612";
+  color: lightblue;
 }
 
 .icon-xudianchizhengchang:before {
-  font-size: 40px;
-  color: greenyellow;
   content: "\e60d";
+  color: greenyellow;
+}
+
+.icon-dianchi:before {
+  content: "\e60e";
+  color: lightskyblue;
+  font-size: 100px;
+  
+}
+
+.icon-map_btn_hzmarker_normal:before {
+  content: "\e62f";
+  color: greenyellow;
+}
+
+.icon-api_mining_hover:before {
+  content: "\e6a8";
+  color: grey;
+  font-size: 40px;
+}
+
+.icon-lvsenengyuan:before {
+  content: "\e6af";
+  color: lightgreen;
+}
+
+.icon-a-iconshuididituxianshi:before { 
+  content: "\e628";
+  color: lightblue;
+  font-size: 40px;
 }
 
