@@ -11,17 +11,25 @@
       <div class="router-button" v-bind:class="{ active: this.activeIndex === 7 }" @click="changeMenu(7)">后台管理</div>
     </div>
     <div class="clock">
-      2024年8月10日 10:15:30
+      {{ newTime }}
     </div>
   </div>
 </template>
 
 
 <script>
+
+var icnow = new Date()
+var interval;
 export default {
   data() {
     return {
-      activeIndex: 1
+      activeIndex: 1,
+      year: icnow.getFullYear(),
+      month: icnow.getMonth() + 1,
+      date: icnow.getDate(),
+      day: icnow.getDay(),
+      time: icnow.toTimeString().substring(0, 8)
     };
   },
   methods: {
@@ -32,6 +40,25 @@ export default {
       this.activeIndex = e
       console.log(e);
     }
+  },
+  created() {
+    interval = setInterval(() => {
+      let icnow = new Date();
+      this.year = icnow.getFullYear();
+      this.month = icnow.getMonth() + 1;
+      this.date = icnow.getDate();
+      this.day = icnow.getDay();
+      this.time = icnow.toTimeString().substring(0, 8);
+    }, 1000)
+  },
+  computed: {
+    // 当前时间
+    newTime: function () {
+      return this.year + '年' + this.month + '月' + this.date + '日\u00a0\u00a0' + this.time;
+    }
+  },
+  beforeDestroy() {
+    clearInterval(interval);
   }
 }
 </script>
@@ -57,13 +84,14 @@ export default {
   .menu {
     display: inline-block;
     width: 1050px;
+    color: #9BD5EF;
 
     .router-button {
       font-size: 25px;
       display: inline-block;
       width: 150px;
       cursor: pointer;
-      color: #96b4d2;
+
     }
 
     :hover {
@@ -82,6 +110,7 @@ export default {
     width: 400px;
     font-size: 25px;
     padding: 0 30px;
+    color: #9BD5EF;
   }
 }
 </style>
