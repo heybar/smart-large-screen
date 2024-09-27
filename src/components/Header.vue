@@ -80,12 +80,12 @@ export default {
     }
 
     :hover {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5));
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(8, 185, 193, 0) 186%);
       color: #4c8dd2;
     }
 
     .active {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5));
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(8, 185, 193, 0) 186%);
       color: #4c8dd2;
     }
   }

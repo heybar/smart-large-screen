@@ -1,18 +1,16 @@
 <!-- 储能电池 -->
 <template>
   <div>
-    <div class="t_title">储能电池</div>
-    <div class="table_content">
-      <el-row >
-          <el-col :span="6">
-            <div class="left_content">
-              <i class="iconfont icon-dianchi"></i>
-            </div>
-          </el-col>
-          <el-col :span="17"><div class="right_content">今日充电量：</div></el-col>
-          <el-col :span="17"><div class="right_content">今日放电量：</div></el-col>
-          <el-col :span="17"><div class="right_content">储能总运行功率（MW）：</div></el-col>
-      </el-row>
+    <div class="chart-title right-title">储能电池</div>
+    <div class="table-content">
+      <div class="left">
+        <i class="iconfont icon-dianchi"></i>
+      </div>
+      <div class="right">
+        <div>今日充电量：</div>
+        <div>今日放电量：</div>
+        <div>储能总运行功率（MW）：</div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,13 +20,26 @@ export default {
 }
 </script>
 
-<style lang="less">
-.left_content{
-  margin-top: 1px;
-  margin-left: 10px;
-}
-.right_content{
+<style lang="less" scoped>
+.chart-title {
+  font-size: 25px;
+  height: 50px;
   margin-left: 40px;
   margin-top: 10px;
+}
+
+.table-content {
+  height: 190px;
+  display: flex;
+  padding-left: 30px;
+  align-items: center;
+
+  .right {
+    padding-left: 20px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 </style>

@@ -67,3 +67,51 @@ a {
 body {
   background-color: #051840;
 }
+
+.skew-selected {
+  background: linear-gradient(180deg, #08B9C1 -3%, #0758B8 100%);
+}
+
+
+.bottom-bd {
+  border-bottom: 1px solid #ffffff30;
+}
+
+.skew-button {
+  height: 40px;
+  text-align: center;
+  transform: skewX(-35deg);
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(40, 70, 104);
+
+  div {
+    font-size: 18px;
+    color: white;
+    transform: skewX(35deg);
+    line-height: 40px;
+  }
+}
+
+.skew-button:hover {
+  background: linear-gradient(180deg, #08B9C1 -3%, #0758B8 100%);
+  height: 40px;
+  text-align: center;
+  transform: skewX(-35deg);
+  border-radius: 5px;
+  cursor: pointer;
+
+  div {
+    font-size: 18px;
+    color: white;
+    transform: skewX(35deg);
+  }
+}
+
+.right-title {
+  background: url(../pictures/right_title_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  line-height: 50px;
+}

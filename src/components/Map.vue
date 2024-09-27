@@ -52,7 +52,7 @@ export default {
           bottom: '5%',
           itemStyle: {
             areaColor: '#31487c',
-            borderColor: '#46b2c9',
+            borderColor: '#11F6F2',
             borderWidth: window.innerWidth / 480
           }
         },
