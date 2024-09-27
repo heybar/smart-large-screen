@@ -1,19 +1,19 @@
 <!-- 资产统计 -->
 <template>
   <div class="button-group">
-    <button class="skew-button">
+    <button class="skew-button w-100 skew-selected">
       <div>风电</div>
     </button>
-    <button class="skew-button">
+    <button class="skew-button w-100 skew-selected">
       <div>光电</div>
     </button>
-    <button class="skew-button">
+    <button class="skew-button w-100">
       <div>火电</div>
     </button>
-    <button class="skew-button">
+    <button class="skew-button w-100">
       <div>供热</div>
     </button>
-    <button class="skew-button">
+    <button class="skew-button w-100">
       <div>储能</div>
     </button>
 
@@ -25,26 +25,14 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .button-group {
   display: flex;
   justify-content: space-around;
   margin: 0, 20px;
 }
 
-.skew-button {
-  background: linear-gradient(to bottom, blue, #ddd);
+.w-100 {
   width: 100px;
-  height: 40px;
-  text-align: center;
-  transform: skewX(-35deg);
-  border-radius: 5px;
-  cursor: pointer;
-
-  div {
-    font-size: 18px;
-    color: white;
-    transform: skewX(35deg);
-  }
 }
 </style>

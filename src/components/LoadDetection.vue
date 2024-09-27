@@ -1,7 +1,7 @@
 <!-- 发电统计 -->
 <template>
   <div class='pi-container'>
-    <div class="chart-title">资产统计</div>
+    <div class="chart-title right-title">发电统计</div>
     <div class='pi-chart' ref='piChart'></div>
   </div>
 </template>
@@ -29,20 +29,25 @@ export default {
         legend: {
           orient: 'horizontal',
           left: 'center',
+          top: '5%',
           textStyle: {
             color: '#fff'
           }
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
-            radius: '50%',
+            top: '10%',
+            radius: '70%',
             data: [
               { value: 30, name: '火电', itemStyle: { color: '#F94F74' } },
               { value: 40, name: '风电', itemStyle: { color: '#766BEE' } },
               { value: 30, name: '水电', itemStyle: { color: '#42B2FE' } },
             ],
+            label: {
+              formatter: '{b} :   {c}',
+              color: '#fff'
+            },
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
