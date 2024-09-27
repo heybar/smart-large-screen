@@ -4,9 +4,9 @@
     <div class='charts-dom' ref='chartsDOM'></div>
 
     <div class="info">
-      <div>火电有功功率：</div>
-      <div>风电有功功率：</div>
-      <div>光电有功功率：</div>
+      <div>火电有功功率（MW）：</div>
+      <div>风电有功功率（MW）：</div>
+      <div>光电有功功率（MW）：</div>
     </div>
   </div>
 </template>
