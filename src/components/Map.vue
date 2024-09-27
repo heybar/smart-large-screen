@@ -1,6 +1,13 @@
 <template>
   <div class='com-container'>
+
     <div class='charts-dom' ref='chartsDOM'></div>
+
+    <div class="info">
+      <div>火电有功功率：</div>
+      <div>风电有功功率：</div>
+      <div>光电有功功率：</div>
+    </div>
   </div>
 </template>
 
@@ -112,7 +119,21 @@ export default {
 .com-container {
   width: 100%;
   height: 100%;
+  position: relative;
 
+  .info {
+    background-color: transparent;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    font-size: 24px;
+    cursor: default;
+    user-select: none;
+
+    div {
+      margin-bottom: 5px;
+    }
+  }
 
   .charts-dom {
     width: 100%;
