@@ -11,7 +11,7 @@
       <div class="router-button" v-bind:class="{ active: this.activeIndex === 7 }" @click="changeMenu(7)">后台管理</div>
     </div>
     <div class="clock">
-      2024年8月10日 10:15:30
+      <span>{{ currentTime }}</span>
     </div>
   </div>
 </template>
@@ -21,7 +21,9 @@
 export default {
   data() {
     return {
-      activeIndex: 1
+      activeIndex: 1,
+      intervalId: null,
+      currentTime: null
     };
   },
   methods: {
@@ -31,6 +33,17 @@ export default {
     changeMenu(e) {
       this.activeIndex = e
       console.log(e);
+    },
+    getDate(){
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const date = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const formattedDate = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
+      this.currentTime = formattedDate;
     }
   }
 }
