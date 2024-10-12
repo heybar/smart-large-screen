@@ -155,7 +155,8 @@ export default {
                   '<br> ' +
                   params.data.value[2]
                 );
-              }
+              },
+              borderColor: '#fff'
             },
             type: 'effectScatter',
             coordinateSystem: 'geo',
@@ -166,17 +167,15 @@ export default {
               brushType: 'fill',
             },
             itemStyle: {
-              normal: {
-                color: '#ffff',
-                shadowBlur: 10,
-                shadowColor: '#333',
-              },
+              color: 'yellow',
+              shadowBlur: 10,
+              shadowColor: '#333',
+              borderColor: '#fff'
             },
             data: [
               {
                 name: '火电',
                 value: [119.80, 44.49, 111111],
-
               },
             ],
           },
