@@ -35,10 +35,25 @@ const name2pinyin = {
   浙江: 'zhejiang'
 }
 
-export function getProvinceMapInfo (arg) {
+export function getProvinceMapInfo(arg) {
   const path = `/static/map/province/${name2pinyin[arg]}.json`
   return {
     key: name2pinyin[arg],
     path: path
   }
 }
+
+export function convertData(data, geoData) {
+  var res = [];
+  for (var i = 0; i < data.length; i++) {
+    var geoCoord = geoData[data[i].name];
+    if (geoCoord) {
+      res.push({
+        name: data[i].name,
+        value: geoCoord.concat(data[i].value)
+      });
+    }
+  }
+  console.log(res);
+  return res;
+};
