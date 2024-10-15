@@ -11,7 +11,16 @@
       <div class="router-button" v-bind:class="{ active: this.activeIndex === 7 }" @click="changeMenu(7)">后台管理</div>
     </div>
     <div class="clock">
-      {{ newTime }}
+      <div class="user">
+        <div class="user-name">用户名</div>
+        <div class="avatar">
+          <img src="@/assets/logo.png" alt="">
+        </div>
+      </div>
+      <div class="time">
+        {{ newTime }}
+      </div>
+
     </div>
   </div>
 </template>
@@ -88,8 +97,14 @@ export default {
     display: inline-block;
     width: 400px;
     font-size: 35px;
-    text-shadow: 8px 8px 8px green;
-    padding: 0 30px;
+    font-family: HarmonyOS Sans SC;
+
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 294%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0px 5px 15px #00B578;
   }
 
   .menu {
@@ -107,12 +122,12 @@ export default {
 
     :hover {
       background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(8, 185, 193, 0) 186%);
-      color: #4c8dd2;
+      color: #409EFF;
     }
 
     .active {
       background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(8, 185, 193, 0) 186%);
-      color: #4c8dd2;
+      color: #409EFF;
     }
   }
 
@@ -122,6 +137,33 @@ export default {
     font-size: 25px;
     padding: 0 30px;
     color: #9BD5EF;
+
+    .user {
+      display: flex;
+      justify-content: center;
+
+      .user-name {
+        margin-right: 30px;
+        color: #fff;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+
+        img {
+          width: 100%;
+          height: 40px;
+          border-radius: 50%;
+          background-color: #fff;
+
+        }
+      }
+    }
+
+    .time {
+      line-height: 45px;
+    }
   }
 }
 </style>

@@ -199,9 +199,9 @@ export default {
   .info {
     background-color: transparent;
     position: absolute;
-    left: 50px;
+    left: 30px;
     top: 20px;
-    font-size: 24px;
+    font-size: 20px;
     cursor: default;
     user-select: none;
 

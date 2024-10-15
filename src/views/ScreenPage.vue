@@ -17,7 +17,7 @@
       </div>
     </div> -->
     <div class="sub-title">
-      风光火储能源基地调控系统
+      <!-- 风光火储能源基地调控系统 -->
     </div>
     <div class="charts-content">
       <div class="charts-left">
@@ -101,6 +101,7 @@ export default {
   .sub-title {
     font-size: 30px;
     line-height: 60px;
+    height: 60px;
     text-align: center;
   }
 

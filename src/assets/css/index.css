@@ -11,8 +11,8 @@ html {
   height: 100%;
   color: #eee;
   /* overflow: hidden;*/
-  /* background: url(../pictures/bg.jpg); */
-  background-color: #061f48;
+  background: url(../pictures/bg.png);
+  /* background-color: #061f48; */
   background-size: 100% auto;
   scrollbar-width: none;
   /* firefox */
