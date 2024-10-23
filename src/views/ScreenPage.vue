@@ -23,22 +23,27 @@
       <div class="charts-left">
         <div class="table-container">
           <div class="table-title"></div>
+          <!-- 发电量 -->
           <PowerGeneration></PowerGeneration>
         </div>
         <div class="table-container">
           <div class="table-title"></div>
-          <UnitStatus></UnitStatus>
+          <!-- 机组状态 -->
+          <UnitStatus :unitStatusRespVO="unitStatusRespVO"></UnitStatus>
         </div>
         <div class="table-container">
           <div class="table-title"></div>
+          <!-- 资产统计 -->
           <AssetsStatistics></AssetsStatistics>
         </div>
       </div>
       <div class="charts-center">
         <div class="map">
+          <!-- 地图 -->
           <Map></Map>
         </div>
         <div class="type-button">
+          <!--  -->
           <ButtonGroup></ButtonGroup>
         </div>
         <div class="line-chart">
@@ -47,15 +52,19 @@
       </div>
       <div class="charts-right">
         <div class="right-charts-container">
+          <!-- 发电统计 -->
           <LoadDetection></LoadDetection>
         </div>
         <div class="right-charts-container">
+          <!-- 储能电池 -->
           <ResourceOverview></ResourceOverview>
         </div>
         <div class="right-bootom-container">
+          <!-- 社会效益 -->
           <Example></Example>
         </div>
         <div class="right-bottom-container">
+          <!--底部无标题-->
           <Bottom></Bottom>
         </div>
 
@@ -75,8 +84,14 @@ import Map from '../components/Map.vue';
 import Bottom from '../components/Bottom.vue';
 import LineChart from '../components/LineChart';
 import ButtonGroup from '../components/ButtonGroup';
+import { getHomeData } from '@/api/home'
 
 export default {
+  data() {
+    return {
+      unitStatusRespVO: {}
+    }
+  },
   components: {
     AssetsStatistics,
     LoadDetection,
@@ -88,7 +103,19 @@ export default {
     Map,
     LineChart,
     ButtonGroup
-
+  },
+  created() {
+    this.initHomeData()
+  },
+  methods: {
+    initHomeData() {
+      getHomeData().then(res => {
+        console.log(res.data.unitStatusRespVO);
+        this.unitStatusRespVO = res.data.unitStatusRespVO
+      }).catch(error => {
+        console.log(error);
+      })
+    }
   }
 }
 </script>

@@ -103,7 +103,6 @@ export default {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
     text-shadow: 0px 5px 15px #00B578;
   }
 
@@ -141,6 +140,7 @@ export default {
     .user {
       display: flex;
       justify-content: center;
+      cursor: pointer;
 
       .user-name {
         margin-right: 30px;
