@@ -57,17 +57,12 @@
         </div>
         <div class="right-charts-container">
           <!-- 储能电池 -->
-          <ResourceOverview></ResourceOverview>
+          <EnergyBatteries></EnergyBatteries>
         </div>
-        <div class="right-bootom-container">
+        <div class="right-charts-container">
           <!-- 社会效益 -->
-          <Example></Example>
+          <SocialBenefits></SocialBenefits>
         </div>
-        <div class="right-bottom-container">
-          <!--底部无标题-->
-          <Bottom></Bottom>
-        </div>
-
       </div>
     </div>
   </div>
@@ -77,11 +72,10 @@
 import AssetsStatistics from '../components/AssetsStatistics';
 import LoadDetection from '../components/LoadDetection';
 import PowerGeneration from '../components/PowerGeneration';
-import ResourceOverview from '../components/ResourceOverview';
+import EnergyBatteries from '../components/EnergyBatteries';
 import UnitStatus from '../components/UnitStatus';
-import Example from '../components/Example.vue';
+import SocialBenefits from '../components/SocialBenefits.vue';
 import Map from '../components/Map.vue';
-import Bottom from '../components/Bottom.vue';
 import LineChart from '../components/LineChart';
 import ButtonGroup from '../components/ButtonGroup';
 import { getHomeData } from '@/api/home'
@@ -96,10 +90,9 @@ export default {
     AssetsStatistics,
     LoadDetection,
     PowerGeneration,
-    ResourceOverview,
+    EnergyBatteries,
     UnitStatus,
-    Example,
-    Bottom,
+    SocialBenefits,
     Map,
     LineChart,
     ButtonGroup
@@ -147,18 +140,18 @@ export default {
       .table-container {
         width: 100%;
         height: 280px;
-        background-image: url(../assets/pictures/chart_bg.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+        // background-image: url(../assets/pictures/chart_bg.png);
+        // background-size: 100% 100%;
+        // background-repeat: no-repeat;
         // border: 1px solid red;
         position: relative;
 
         &:after {
           position: absolute;
           content: " ";
-          background: url(../assets/pictures/left_title_bg.png);
-          background-size: 100% 100%;
-          background-repeat: no-repeat;
+          // background: url(../assets/pictures/left_title_bg.png);
+          // background-size: 100% 100%;
+          // background-repeat: no-repeat;
           display: block;
           width: 350px;
           height: 23px;
@@ -208,11 +201,6 @@ export default {
         // border: 1px solid red;
       }
 
-      .right-bottom-container {
-        width: 100%;
-        height: 100px;
-        // border: 1px solid red;
-      }
     }
   }
 }

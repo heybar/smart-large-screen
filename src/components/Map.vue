@@ -107,6 +107,9 @@ export default {
             },
           },
         },
+        select: {//这个就是鼠标点击后，地图想要展示的配置
+          disabled: true,//可以被选中
+        },
         series: [
           {
             tooltip: {

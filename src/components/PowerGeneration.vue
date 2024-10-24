@@ -1,7 +1,7 @@
 <!-- 发电量 -->
 <template>
   <div>
-    <div class="chart-title">电量指标</div>
+    <div class="chart-title left-title">电量指标</div>
     <div class="btn_title">
       <el-row>
         <el-col :span="6">
@@ -54,7 +54,7 @@ export default {
 .chart-title {
   font-size: 25px;
   height: 40px;
-  margin-left: 40px;
+  margin-left: 0px;
   margin-top: 10px;
 }
 
