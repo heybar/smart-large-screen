@@ -4,26 +4,26 @@
     <div class="chart-title right-title">储能电池</div>
     <div class="table-content">
       <div class="left">
-        <i class="iconfont icon-dianchi"></i>
+        <Battery></Battery>
       </div>
-      <div class="right">
-        <!-- <div>今日充电量：</div>
-        <div>今日放电量：</div>
-        <div>储能总运行功率（MW）：</div> -->
-        <div class="line-chart" ref="lineChart"></div>
-      </div>
+      <div class="line-chart" ref="lineChart"></div>
     </div>
   </div>
 </template>
 
 <script>
-import * as echarts from 'echarts' 
+import * as echarts from 'echarts'
+import Battery from './Battery/Battery.vue'
+
 export default {
   data() {
     return {
       chartInstance: null,
       chartOption: {}
     }
+  },
+  components: {
+    Battery
   },
   mounted() {
     this.initChart()
@@ -40,7 +40,7 @@ export default {
           top: '5%',
           data: ['充电量', '发电量'],
           textStyle: {
-            color: '#fff' 
+            color: '#fff'
           }
         },
         grid: {
@@ -80,14 +80,13 @@ export default {
             stack: 'Total',
             data: [220, 182, 191, 234, 290, 330, 310]
           },
-          
+
         ]
       };
       this.chartInstance.setOption(this.chartOption)
       window.addEventListener('resize', () => {
         that.chartInstance.resize(this.chartOption)
       })
-
     }
   }
 }
@@ -105,32 +104,17 @@ export default {
   height: 250px;
   display: flex;
   padding-left: 30px;
+  justify-content: space-around;
   align-items: center;
-  .left {
-    height: 250px;
-    margin-top: 10px;
-    margin-left: 0px;
-  }
-  .right {
-    margin-left: 5px;
-    
-    height: 200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .line-container {
-      width: 100%;
-      height: 300px;
-    }
 
-    .line-chart {
-      width: 300px;
-      height: 300px;
-    }
-    div {
-      font-size: 22px;
-    }
+  .left {
+    padding: 20px;
   }
+
+  .line-chart {
+    width: 460px;
+    height: 230px;
+  }
+
 }
 </style>
