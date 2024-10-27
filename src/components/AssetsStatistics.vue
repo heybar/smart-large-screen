@@ -1,7 +1,7 @@
 <!-- 资产统计 -->
 <template>
   <div>
-    <div class="chart-title">资产统计</div>
+    <div class="chart-title left-title">资产统计</div>
     <div class="table-content">
       <el-row>
         <el-col :span="2">
@@ -111,7 +111,7 @@ export default {
 .chart-title {
   font-size: 25px;
   height: 50px;
-  margin-left: 40px;
+  margin-left: 0px;
   margin-top: 10px;
 }
 

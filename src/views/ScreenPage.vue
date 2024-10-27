@@ -140,18 +140,18 @@ export default {
       .table-container {
         width: 100%;
         height: 280px;
-        background-image: url(../assets/pictures/chart_bg.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+        // background-image: url(../assets/pictures/chart_bg.png);
+        // background-size: 100% 100%;
+        // background-repeat: no-repeat;
         // border: 1px solid red;
         position: relative;
 
         &:after {
           position: absolute;
           content: " ";
-          background: url(../assets/pictures/left_title_bg.png);
-          background-size: 100% 100%;
-          background-repeat: no-repeat;
+          // background: url(../assets/pictures/left_title_bg.png);
+          // background-size: 100% 100%;
+          // background-repeat: no-repeat;
           display: block;
           width: 350px;
           height: 23px;
