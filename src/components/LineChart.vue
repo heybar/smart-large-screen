@@ -8,6 +8,11 @@
 <script>
 import * as echarts from 'echarts'
 export default {
+  props: {},
+  chartOption: {
+    type: Object,
+    required: true
+  },
   data() {
     return {
       chartInstance: null,
@@ -16,6 +21,14 @@ export default {
   },
   mounted() {
     this.initChart()
+  },
+  watch: {
+    chartOption: {
+      handler: function (newVal) {
+        this.updateChart(newVal);
+      },
+      deep: true
+    }
   },
   methods: {
     initChart() {
@@ -27,7 +40,7 @@ export default {
         },
         legend: {
           top: '5%',
-          data: ['火', '火A', '火B', '风电'],
+          data: ['风', '光', '火', '供热', '储能'],
           textStyle: {
             color: '#fff'
           }
@@ -58,25 +71,31 @@ export default {
         },
         series: [
           {
-            name: '火',
+            name: '风',
             type: 'line',
             stack: 'Total',
             data: [120, 132, 101, 134, 90, 230, 210]
           },
           {
-            name: '火A',
+            name: '光',
             type: 'line',
             stack: 'Total',
             data: [220, 182, 191, 234, 290, 330, 310]
           },
           {
-            name: '火B',
+            name: '火',
             type: 'line',
             stack: 'Total',
             data: [150, 232, 201, 154, 190, 330, 410]
           },
           {
-            name: '风电',
+            name: '供热',
+            type: 'line',
+            stack: 'Total',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '储能',
             type: 'line',
             stack: 'Total',
             data: [320, 332, 301, 334, 390, 330, 320]
@@ -88,6 +107,10 @@ export default {
         that.chartInstance.resize(this.chartOption)
       })
 
+    },
+    updateChart() {
+      const option = {}
+      this.chartInstance.setOption(option)
     }
   }
 }

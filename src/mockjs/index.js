@@ -3,7 +3,7 @@
 const Mock = require('mockjs')
 
 
-// 获取首页数据包含机组状态、资产统计、有功功率、储能电池SOC、社会效益
+// 获取首页数据包含机组状态、资产统计、有功功率、储能电池SOC、社会效益 -w
 export const getHomeData = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-home-data", "put", {
   "code": 0,
   "data": {
@@ -50,8 +50,7 @@ export const getHomeData = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-
   "msg": ""
 });
 
-
-// 储能电池-充放电折线图数据
+// 储能电池-充放电折线图数据 -w -电池折线图
 export const getStoredInOutLine = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-stored-in-out-line", "get", {
   "code": 0,
   "data": {
@@ -95,8 +94,7 @@ export const getStoredInOutLine = Mock.mock(process.env.VUE_APP_API_BASE_URL + "
   "msg": ""
 });
 
-
-// 电量指标-获取计划发电量数据
+// 电量指标-获取计划发电量数据  -电量指标 -左上
 export const getPlanGeneCapacity = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-plan-gene-capacity", "get", {
   "code": 0,
   "data": {
@@ -107,6 +105,16 @@ export const getPlanGeneCapacity = Mock.mock(process.env.VUE_APP_API_BASE_URL + 
   "msg": ""
 });
 
+// 电量指标-获取发电量数据   -电量指标 -左上
+export const getGeneCapacity = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-gene-capacity", "get", {
+  "code": 0,
+  "data": {
+    "dayGeneCapa": "300",
+    "monthGeneCapa": "10000",
+    "yearGeneCapa": "100000"
+  },
+  "msg": ""
+});
 
 // 发电统计-饼图数据
 export const getGeneStatisticsPie = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-gene-statistics-pie", "get", {
@@ -131,18 +139,7 @@ export const getGeneStatisticsPie = Mock.mock(process.env.VUE_APP_API_BASE_URL +
   "msg": ""
 });
 
-// 电量指标-获取发电量数据
-export const getGeneCapacity = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-gene-capacity", "get", {
-  "code": 0,
-  "data": {
-    "dayGeneCapa": "300",
-    "monthGeneCapa": "10000",
-    "yearGeneCapa": "100000"
-  },
-  "msg": ""
-});
-
-// 有功功率折线图数据
+// 有功功率折线图数据 -正下折线图
 export const getActivePowerLine = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-active-power-line", "get", {
   "code": 0,
   "data": {

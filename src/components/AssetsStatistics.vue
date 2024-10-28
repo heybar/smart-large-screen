@@ -14,7 +14,7 @@
           <div class="grid-content  bottom-bd">装机容量(MWh)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content  bottom-bd">100</div>
+          <div class="grid-content  bottom-bd">{{ propertyRespVO.windCapacity }}</div>
         </el-col>
         <el-col :span="1">
           <div class="grid-content"></div>
@@ -23,7 +23,7 @@
           <div class="grid-content  bottom-bd">风机数量</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content  bottom-bd">100</div>
+          <div class="grid-content  bottom-bd">{{ propertyRespVO.windNum }}</div>
         </el-col>
       </el-row>
 
@@ -38,7 +38,7 @@
           <div class="grid-content bottom-bd">装机容量(MWh)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content bottom-bd">无</div>
+          <div class="grid-content bottom-bd">{{ propertyRespVO.lightCapacity }}</div>
         </el-col>
         <el-col :span="1">
           <div class="grid-content"></div>
@@ -47,7 +47,7 @@
           <div class="grid-content bottom-bd">逆变器数量</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content bottom-bd">无</div>
+          <div class="grid-content bottom-bd">{{ propertyRespVO.lightNum }}</div>
         </el-col>
       </el-row>
 
@@ -62,7 +62,7 @@
           <div class="grid-content bottom-bd">装机容量(MWh)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content bottom-bd">无</div>
+          <div class="grid-content bottom-bd">{{ propertyRespVO.fireCapacity }}</div>
         </el-col>
         <el-col :span="1">
           <div class="grid-content"></div>
@@ -71,7 +71,7 @@
           <div class="grid-content bottom-bd">发电机组</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content bottom-bd">无</div>
+          <div class="grid-content bottom-bd">{{ propertyRespVO.fireNum }}</div>
         </el-col>
       </el-row>
 
@@ -86,7 +86,7 @@
           <div class="grid-content bottom-bd">储能容量(MWh)</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content bottom-bd">无</div>
+          <div class="grid-content bottom-bd">{{ propertyRespVO.storedCapacity }}</div>
         </el-col>
         <el-col :span="1">
           <div class="grid-content"></div>
@@ -95,7 +95,7 @@
           <div class="grid-content bottom-bd">集装箱数量</div>
         </el-col>
         <el-col :span="4">
-          <div class="grid-content bottom-bd">无</div>
+          <div class="grid-content bottom-bd">{{ propertyRespVO.storedNum }}</div>
         </el-col>
       </el-row>
     </div>
@@ -104,6 +104,12 @@
 
 <script>
 export default {
+  props: {
+    propertyRespVO: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 

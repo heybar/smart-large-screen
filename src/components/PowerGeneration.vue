@@ -5,13 +5,15 @@
     <div class="btn_title">
       <el-row>
         <el-col :span="6">
-          <div class="btn skew-button w-100  skew-selected">
+          <div :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': !this.isPlan }"
+            @click="changeData(false)">
             <div>发电量</div>
           </div>
         </el-col>
 
         <el-col :span="8">
-          <div class="btn skew-button w-150">
+          <div :class="{ 'btn': true, 'skew-button': true, 'w-150': true, 'skew-selected': this.isPlan }"
+            @click="changeData(true)">
             <div>计划发电量</div>
           </div>
         </el-col>
@@ -20,26 +22,26 @@
     <div class="table_content">
       <el-row class="table-row">
         <el-col :span="16">
-          <div class="grid_content">日发电量（MWh）</div>
+          <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '日发电量（MWh）' }}</div>
         </el-col>
         <el-col :span="8">
-          <div class="grid_content">300</div>
+          <div class="grid_content">{{ GeneCapadata.dayGeneCapa }}</div>
         </el-col>
       </el-row>
       <el-row class="table-row">
         <el-col :span="16">
-          <div class="grid_content">月发电量（MWh）</div>
+          <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '月发电量（MWh）' }}</div>
         </el-col>
         <el-col :span="8">
-          <div class="grid_content">10000</div>
+          <div class="grid_content">{{ GeneCapadata.monthGeneCapa }}</div>
         </el-col>
       </el-row>
       <el-row class="table-row">
         <el-col :span="16">
-          <div class="grid_content">年发电量（MWh）</div>
+          <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '年发电量（MWh）' }}</div>
         </el-col>
         <el-col :span="8">
-          <div class="grid_content">100000</div>
+          <div class="grid_content">{{ GeneCapadata.yearGeneCapa }}</div>
         </el-col>
       </el-row>
     </div>
@@ -47,7 +49,34 @@
 </template>
 
 <script>
+// 引接口
+
 export default {
+  data() {
+    return {
+      isPlan: false,
+      GeneCapadata: {
+        dayGeneCapa: '',
+        monthGeneCapa: '',
+        yearGeneCapa: ''
+      }
+    }
+  },
+  methods: {
+    changeData(isPlan) {
+      if (isPlan) {
+        // 计划发电量
+
+      } else {
+        // 发电量
+
+      }
+      this.isPlan = isPlan
+    }
+  },
+  created() {
+
+  }
 }
 </script>
 <style lang="less">

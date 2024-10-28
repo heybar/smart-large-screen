@@ -34,7 +34,7 @@
         <div class="table-container">
           <div class="table-title"></div>
           <!-- 资产统计 -->
-          <AssetsStatistics></AssetsStatistics>
+          <AssetsStatistics :propertyRespVO="propertyRespVO"></AssetsStatistics>
         </div>
       </div>
       <div class="charts-center">
@@ -83,7 +83,11 @@ import { getHomeData } from '@/api/home'
 export default {
   data() {
     return {
-      unitStatusRespVO: {}
+      unitStatusRespVO: {}, // 首页机组状态 Response VO
+      propertyRespVO: {}, // 资产统计 Response VO
+      activePowerRespVO: {}, // 资产统计 Response VO
+      storedBatteryRespVO: {}, // 首页储能电池SOC Response VO
+      socialBenefitRespVO: {} // 首页-社会效益 响应VO
     }
   },
   components: {
@@ -105,6 +109,10 @@ export default {
       getHomeData().then(res => {
         console.log(res.data.unitStatusRespVO);
         this.unitStatusRespVO = res.data.unitStatusRespVO
+        this.propertyRespVO = res.data.propertyRespVO
+        this.activePowerRespVO = res.data.activePowerRespVO
+        this.storedBatteryRespVO = res.data.storedBatteryRespVO
+        this.socialBenefitRespVO = res.data.socialBenefitRespVO
       }).catch(error => {
         console.log(error);
       })
