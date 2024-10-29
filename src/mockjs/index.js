@@ -7,6 +7,7 @@ const Mock = require('mockjs')
 export const getHomeData = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-home-data", "put", {
   "code": 0,
   "data": {
+    // 机组状态
     "unitStatusRespVO": {
       "windRunSts": "20",
       "windInterruptSts": "20",
@@ -21,6 +22,7 @@ export const getHomeData = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-
       "fireInterruptSts": "20",
       "fireStopSts": "20"
     },
+    // 资产统计
     "propertyRespVO": {
       "windCapacity": "300",
       "windNum": "300",
@@ -31,6 +33,7 @@ export const getHomeData = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-
       "storedCapacity": "300",
       "storedNum": "300"
     },
+    // 有功功率
     "activePowerRespVO": {
       "windActivePower": "300",
       "lightActivePower": "300",

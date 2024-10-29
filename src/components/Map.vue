@@ -4,10 +4,10 @@
     <div class='charts-dom' ref='chartsDOM'></div>
 
     <div class="info">
-      <div>火电有功功率（MW）：</div>
-      <div>风电有功功率（MW）：</div>
-      <div>光电有功功率（MW）：</div>
-      <div>储能有功功率（MW）：</div>
+      <div>火电有功功率（MW）：{{ activePowerRespVO.windActivePower }}</div>
+      <div>风电有功功率（MW）：{{ activePowerRespVO.lightActivePower }}</div>
+      <div>光电有功功率（MW）：{{ activePowerRespVO.fireActivePower }}</div>
+      <div>储能有功功率（MW）：{{ activePowerRespVO.storedActivePower }}</div>
     </div>
   </div>
 </template>
@@ -58,6 +58,12 @@ export default {
       min: 9,// todo 
       maxSize4Pin: 100,
       minSize4Pin: 20
+    }
+  },
+  props: {
+    activePowerRespVO: {
+      type: Object,
+      required: true
     }
   },
   mounted() {

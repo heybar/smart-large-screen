@@ -2,21 +2,31 @@
 <template>
   <div class="battery">
     <div class="cover">
-      <div class="energy" :class="{ 'isShow': elecVal > 10 }"></div>
-      <div class="energy" :class="{ 'isShow': elecVal > 30 }"></div>
-      <div class="energy" :class="{ 'isShow': elecVal > 50 }"></div>
-      <div class="energy" :class="{ 'isShow': elecVal > 70 }"></div>
-      <div class="energy" :class="{ 'isShow': elecVal > 90 }"></div>
+      <div class="energy" :class="{ 'isShow': batteryPer > 10 }"></div>
+      <div class="energy" :class="{ 'isShow': batteryPer > 30 }"></div>
+      <div class="energy" :class="{ 'isShow': batteryPer > 50 }"></div>
+      <div class="energy" :class="{ 'isShow': batteryPer > 70 }"></div>
+      <div class="energy" :class="{ 'isShow': batteryPer > 90 }"></div>
     </div>
-    <div class="percent">{{ elecVal + '%' }}</div>
+    <div class="percent">{{ batteryPer + '%' }}</div>
   </div>
 </template>
  
 <script>
 export default {
+  props: {
+    storedBatteryRespVO: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
-      elecVal: 100, // 电池电量
+    }
+  },
+  computed: {
+    batteryPer() {
+      return this.storedBatteryRespVO.storedSoc * 100
     }
   }
 }

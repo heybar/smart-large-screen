@@ -27,7 +27,7 @@ export function getPlanGeneCapacity() {
 // 发电统计-饼图数据
 export function getGeneStatisticsPie() {
   return request({
-    url: '/admin-api/ecs/home-page/get-gene-statistics-piey',
+    url: '/admin-api/ecs/home-page/get-gene-statistics-pie',
     method: 'get',
   })
 }

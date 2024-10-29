@@ -8,20 +8,31 @@
 
 <script>
 import * as echarts from 'echarts'
+import { getGeneStatisticsPie } from '../api/home'
+
 export default {
   data() {
     return {
       chartInstance: null,
-      chartOption: {}
+      chartOption: {},
+      colorList: ['#F94F74', '#766BEE', '#42B2FE']
     }
   },
-  mounted() {
+  async mounted() {
+    await this.getChartData()
     this.initChart()
   },
+  watch: {
+    chartData: {
+      handler: function (newVal) {
+        this.updateChart(newVal);
+      },
+      deep: true
+    }
+  },
   methods: {
-    initChart() {
-      let that = this
-      this.chartInstance = echarts.init(this.$refs["piChart"])
+    async getChartData() {
+      const { data } = await getGeneStatisticsPie()
       this.chartOption = {
         tooltip: {
           trigger: 'item'
@@ -39,11 +50,15 @@ export default {
             type: 'pie',
             top: '10%',
             radius: '70%',
-            data: [
-              { value: 30, name: '火电', itemStyle: { color: '#F94F74' } },
-              { value: 40, name: '风电', itemStyle: { color: '#766BEE' } },
-              { value: 30, name: '水电', itemStyle: { color: '#42B2FE' } },
-            ],
+            data: data.seriesData.map((item, index) => {
+              return {
+                value: item.value,
+                name: item.name,
+                itemStyle: {
+                  color: this.colorList[index]
+                }
+              }
+            }),
             label: {
               formatter: '{b} :   {c}',
               color: '#fff'
@@ -58,6 +73,47 @@ export default {
           }
         ]
       };
+      console.log(this.chartOption);
+    },
+    initChart() {
+      let that = this
+      this.chartInstance = echarts.init(this.$refs["piChart"])
+      // this.chartOption = {
+      //   tooltip: {
+      //     trigger: 'item'
+      //   },
+      //   legend: {
+      //     orient: 'horizontal',
+      //     left: 'center',
+      //     top: '5%',
+      //     textStyle: {
+      //       color: '#fff'
+      //     }
+      //   },
+      //   series: [
+      //     {
+      //       type: 'pie',
+      //       top: '10%',
+      //       radius: '70%',
+      //       data: [
+      //         { value: 30, name: '火电', itemStyle: { color: '#F94F74' } },
+      //         { value: 40, name: '风电', itemStyle: { color: '#766BEE' } },
+      //         { value: 30, name: '水电', itemStyle: { color: '#42B2FE' } },
+      //       ],
+      //       label: {
+      //         formatter: '{b} :   {c}',
+      //         color: '#fff'
+      //       },
+      //       emphasis: {
+      //         itemStyle: {
+      //           shadowBlur: 10,
+      //           shadowOffsetX: 0,
+      //           shadowColor: 'rgba(0, 0, 0, 0.5)'
+      //         }
+      //       }
+      //     }
+      //   ]
+      // };
       this.chartInstance.setOption(this.chartOption)
       window.addEventListener('resize', () => {
         that.chartInstance.resize(this.chartOption)

@@ -12,7 +12,6 @@ instance.interceptors.request.use(config => {
   config.headers['Authorization'] = localStorage.getItem('token'); // 设置请求头部分，这里举例使用了localStorage存储的token作为身份标识
   return config;
 }, error => {
-  console.log(error);
   return Promise.reject(error);
 });
 
@@ -21,7 +20,6 @@ instance.interceptors.request.use(config => {
 instance.interceptors.response.use(res => {
   // 我们一般在这里处理，请求成功后的错误状态码 例如状态码是500，404，403
   // res 是所有相应的信息
-  console.log(res)
   return res.data
 }, err => {
   let { res } = err

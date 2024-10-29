@@ -40,7 +40,7 @@
       <div class="charts-center">
         <div class="map">
           <!-- 地图 -->
-          <Map></Map>
+          <Map :activePowerRespVO="activePowerRespVO"></Map>
         </div>
         <div class="type-button">
           <!--  -->
@@ -57,7 +57,7 @@
         </div>
         <div class="right-charts-container">
           <!-- 储能电池 -->
-          <EnergyBatteries></EnergyBatteries>
+          <EnergyBatteries :storedBatteryRespVO="storedBatteryRespVO"></EnergyBatteries>
         </div>
         <div class="right-charts-container">
           <!-- 社会效益 -->
