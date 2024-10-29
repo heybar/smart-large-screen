@@ -98,9 +98,9 @@ export const getStoredInOutLine = Mock.mock(process.env.VUE_APP_API_BASE_URL + "
 export const getPlanGeneCapacity = Mock.mock(process.env.VUE_APP_API_BASE_URL + "/admin-api/ecs/home-page/get-plan-gene-capacity", "get", {
   "code": 0,
   "data": {
-    "planDayGeneCapa": "300",
-    "planMonthGeneCapa": "10000",
-    "planYearGeneCapa": "100000"
+    "planDayGeneCapa": "30",
+    "planMonthGeneCapa": "1000",
+    "planYearGeneCapa": "10000"
   },
   "msg": ""
 });

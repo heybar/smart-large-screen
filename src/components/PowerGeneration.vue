@@ -83,7 +83,12 @@ export default {
     }
   },
   created() {
-
+     // 发电量
+     getGeneCapacity().then(res => {
+          this.GeneCapadata.dayGeneCapa = res.data.dayGeneCapa;
+          this.GeneCapadata.monthGeneCapa = res.data.monthGeneCapa;
+          this.GeneCapadata.yearGeneCapa = res.data.yearGeneCapa;
+        });
   }
 }
 </script>

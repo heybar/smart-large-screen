@@ -4,10 +4,10 @@
     <div class='charts-dom' ref='chartsDOM'></div>
 
     <div class="info">
-      <div>火电有功功率（MW）：</div>
-      <div>风电有功功率（MW）：</div>
-      <div>光电有功功率（MW）：</div>
-      <div>储能有功功率（MW）：</div>
+      <div>火电有功功率（MW）：{{activePowerRespVO.fireActivePower}}</div>
+      <div>风电有功功率（MW）：{{activePowerRespVO.windActivePower}}</div>
+      <div>光电有功功率（MW）：{{activePowerRespVO.lightActivePower}}</div>
+      <div>储能有功功率（MW）：{{activePowerRespVO.storedActivePower}}</div>
     </div>
   </div>
 </template>
@@ -47,7 +47,12 @@ import { convertData } from '@/utils/map_utils'
 //     },
 export default {
 
-
+  props: {
+    activePowerRespVO: {
+      type: Object,
+      Required: true
+    }
+  },
   data() {
     return {
       chartInstance: null,

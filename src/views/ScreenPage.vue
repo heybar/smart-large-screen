@@ -40,7 +40,7 @@
       <div class="charts-center">
         <div class="map">
           <!-- 地图 -->
-          <Map></Map>
+          <Map :activePowerRespVO="activePowerRespVO"></Map>
         </div>
         <div class="type-button">
           <!--  -->
@@ -61,7 +61,7 @@
         </div>
         <div class="right-charts-container">
           <!-- 社会效益 -->
-          <SocialBenefits></SocialBenefits>
+          <SocialBenefits :socialBenefitRespVO="socialBenefitRespVO"></SocialBenefits>
         </div>
       </div>
     </div>
