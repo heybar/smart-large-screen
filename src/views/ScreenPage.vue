@@ -61,7 +61,7 @@
         </div>
         <div class="right-charts-container">
           <!-- 社会效益 -->
-          <SocialBenefits></SocialBenefits>
+          <SocialBenefits :socialBenefitRespVO="socialBenefitRespVO"></SocialBenefits>
         </div>
       </div>
     </div>

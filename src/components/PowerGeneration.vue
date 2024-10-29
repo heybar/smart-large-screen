@@ -50,7 +50,7 @@
 
 <script>
 // 引接口
-
+import { getGeneCapacity,getPlanGeneCapacity } from '@/api/home';
 export default {
   data() {
     return {
@@ -66,23 +66,36 @@ export default {
     changeData(isPlan) {
       if (isPlan) {
         // 计划发电量
-
+        getPlanGeneCapacity().then(res => {
+          this.GeneCapadata.dayGeneCapa = res.data.planDayGeneCapa; 
+          this.GeneCapadata.monthGeneCapa = res.data.planMonthGeneCapa;
+          this.GeneCapadata.yearGeneCapa = res.data.planYearGeneCapa;
+        });
       } else {
         // 发电量
-
+        getGeneCapacity().then(res => {
+          this.GeneCapadata.dayGeneCapa = res.data.dayGeneCapa;
+          this.GeneCapadata.monthGeneCapa = res.data.monthGeneCapa;
+          this.GeneCapadata.yearGeneCapa = res.data.yearGeneCapa;
+        });
       }
       this.isPlan = isPlan
     }
   },
   created() {
-
+     // 发电量
+     getGeneCapacity().then(res => {
+          this.GeneCapadata.dayGeneCapa = res.data.dayGeneCapa;
+          this.GeneCapadata.monthGeneCapa = res.data.monthGeneCapa;
+          this.GeneCapadata.yearGeneCapa = res.data.yearGeneCapa;
+        });
   }
 }
 </script>
 <style lang="less">
 .chart-title {
   font-size: 25px;
-  height: 40px;
+  height: 50px;
   margin-left: 0px;
   margin-top: 10px;
 }

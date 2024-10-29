@@ -8,7 +8,7 @@
         <div class="right-text">
           <div class="i-title">清洁能源发电</div>
           <div>
-            <div class="i-num">1253</div>
+            <div class="i-num">{{socialBenefitRespVO.greenGeneCapa}}</div>
             <div class="i-unit">MWh</div>
           </div>
         </div>
@@ -18,7 +18,7 @@
         <div class="right-text">
           <div class="i-title">减碳排放量</div>
           <div>
-            <div class="i-num">9827</div>
+          <div class="i-num">{{socialBenefitRespVO.reduceCarbonOutNum}}</div>
             <div class="i-unit">吨</div>
           </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="right-text">
           <div class="i-title">相当于种植树木</div>
           <div>
-            <div class="i-num">1726</div>
+            <div class="i-num">{{socialBenefitRespVO.thriftyCoalNum}}</div>
             <div class="i-unit">根</div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="right-text">
           <div class="i-title">节约标准煤</div>
           <div>
-            <div class="i-num">88</div>
+            <div class="i-num">{{socialBenefitRespVO.equalTreeNum}}</div>
             <div class="i-unit">吨</div>
           </div>
         </div>
@@ -56,7 +56,13 @@ import Battery from './Battery/Battery.vue'
 export default {
   components: {
     Battery
-  }
+  },
+  props: {
+    socialBenefitRespVO: {
+      type: Object,
+      required: true
+    }
+  },
 }
 </script>
 

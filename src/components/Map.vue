@@ -47,7 +47,12 @@ import { convertData } from '@/utils/map_utils'
 //     },
 export default {
 
-
+  props: {
+    activePowerRespVO: {
+      type: Object,
+      Required: true
+    }
+  },
   data() {
     return {
       chartInstance: null,
