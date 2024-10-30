@@ -2,48 +2,50 @@
 <template>
   <div>
     <div class="chart-title left-title">电量指标</div>
-    <div class="btn_title">
-      <el-row>
-        <el-col :span="6">
-          <div :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': !this.isPlan }"
-            @click="changeData(false)">
-            <div>发电量</div>
-          </div>
-        </el-col>
+    <div class="table_cotent">
+      <div class="btn_title">
+        <el-row>
+          <el-col :span="6">
+            <div :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': !this.isPlan }"
+              @click="changeData(false)">
+              <div>发电量</div>
+            </div>
+          </el-col>
 
-        <el-col :span="8">
-          <div :class="{ 'btn': true, 'skew-button': true, 'w-150': true, 'skew-selected': this.isPlan }"
-            @click="changeData(true)">
-            <div>计划发电量</div>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
-    <div class="table_content">
-      <el-row class="table-row">
-        <el-col :span="16">
-          <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '日发电量（MWh）' }}</div>
-        </el-col>
-        <el-col :span="8">
-          <div class="grid_content">{{ GeneCapadata.dayGeneCapa }}</div>
-        </el-col>
-      </el-row>
-      <el-row class="table-row">
-        <el-col :span="16">
-          <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '月发电量（MWh）' }}</div>
-        </el-col>
-        <el-col :span="8">
-          <div class="grid_content">{{ GeneCapadata.monthGeneCapa }}</div>
-        </el-col>
-      </el-row>
-      <el-row class="table-row">
-        <el-col :span="16">
-          <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '年发电量（MWh）' }}</div>
-        </el-col>
-        <el-col :span="8">
-          <div class="grid_content">{{ GeneCapadata.yearGeneCapa }}</div>
-        </el-col>
-      </el-row>
+          <el-col :span="8">
+            <div :class="{ 'btn': true, 'skew-button': true, 'w-150': true, 'skew-selected': this.isPlan }"
+              @click="changeData(true)">
+              <div>计划发电量</div>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="table_content">
+        <el-row class="table-row">
+          <el-col :span="16">
+            <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '日发电量（MWh）' }}</div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid_content">{{ GeneCapadata.dayGeneCapa }}</div>
+          </el-col>
+        </el-row>
+        <el-row class="table-row">
+          <el-col :span="16">
+            <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '月发电量（MWh）' }}</div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid_content">{{ GeneCapadata.monthGeneCapa }}</div>
+          </el-col>
+        </el-row>
+        <el-row class="table-row">
+          <el-col :span="16">
+            <div class="grid_content">{{ (this.isPlan ? '计划' : '') + '年发电量（MWh）' }}</div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid_content">{{ GeneCapadata.yearGeneCapa }}</div>
+          </el-col>
+        </el-row>
+      </div>
     </div>
   </div>
 </template>
@@ -119,8 +121,8 @@ export default {
 
 .table_content {
   margin-left: 45px;
-  margin-top: 10px;
-  height: 145px;
+  margin-top: 20px;
+  height: 165px;
   font-size: 18px;
   display: flex;
   flex-direction: column;

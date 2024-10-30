@@ -98,8 +98,8 @@ export default {
 .table-content {
   padding-left: 10px;
   margin-left: 20px;
-  margin-top: 10px;
-  height: 180px;
+  margin-top: 30px;
+  height: 210px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
