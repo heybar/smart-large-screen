@@ -48,8 +48,8 @@ export default {
         series: [
           {
             type: 'pie',
-            top: '10%',
-            radius: '70%',
+            top: '30%',
+            radius: '80%',
             data: data.seriesData.map((item, index) => {
               return {
                 value: item.value,

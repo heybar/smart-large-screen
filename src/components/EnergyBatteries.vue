@@ -14,7 +14,7 @@
 <script>
 import * as echarts from 'echarts'
 import Battery from './Battery/Battery.vue'
-import { getActivePowerLine } from '../api/home'
+import { getStoredInOutLine } from '../api/home'
 
 export default {
   data() {
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     async getChartData() {
-      const { data } = await getActivePowerLine()
+      const { data } = await getStoredInOutLine()
       this.chartOption = {
         tooltip: {
           trigger: 'axis'
