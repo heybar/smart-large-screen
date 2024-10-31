@@ -43,6 +43,9 @@ export default {
   async mounted() {
     await this.getChartData()
     this.initChart()
+    this.$bus.$on('update', () => {
+      this.getChartData()
+    })
   },
   methods: {
     async getChartData() {
@@ -150,6 +153,9 @@ export default {
       window.addEventListener('resize', () => {
         that.chartInstance.resize(this.chartOption)
       })
+    },
+    updateChart() {
+      this.chartInstance.setOption(this.chartOption)
     }
   }
 }

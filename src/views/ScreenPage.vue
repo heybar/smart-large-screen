@@ -103,11 +103,14 @@ export default {
   },
   created() {
     this.initHomeData()
+    setInterval(() => {
+      this.$bus.$emit('update')
+      this.initHomeData()
+    }, 600000);//600000
   },
   methods: {
     initHomeData() {
       getHomeData().then(res => {
-        console.log(res.data.unitStatusRespVO);
         this.unitStatusRespVO = res.data.unitStatusRespVO
         this.propertyRespVO = res.data.propertyRespVO
         this.activePowerRespVO = res.data.activePowerRespVO
@@ -116,7 +119,7 @@ export default {
       }).catch(error => {
         console.log(error);
       })
-    }
+    },
   }
 }
 </script>

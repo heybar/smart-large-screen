@@ -21,6 +21,9 @@ export default {
   async mounted() {
     await this.getChartData()
     this.initChart()
+    this.$bus.$on('update', () => {
+      this.getChartData()
+    })
   },
   watch: {
     chartData: {
@@ -73,7 +76,6 @@ export default {
           }
         ]
       };
-      console.log(this.chartOption);
     },
     initChart() {
       let that = this
@@ -119,6 +121,9 @@ export default {
         that.chartInstance.resize(this.chartOption)
       })
 
+    },
+    updateChart() {
+      this.chartInstance.setOption(this.chartOption)
     }
   }
 }
