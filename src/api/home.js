@@ -41,9 +41,10 @@ export function getGeneCapacity() {
 }
 
 // 有功功率折线图数据
-export function getActivePowerLine() {
+export function getActivePowerLine(data) {
   return request({
     url: '/admin-api/ecs/home-page/get-active-power-line',
     method: 'get',
+    params: data
   })
 }

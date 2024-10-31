@@ -7,19 +7,16 @@
 
 <script>
 import * as echarts from 'echarts'
+import { getActivePowerLine } from '../api/home'
 export default {
-  props: {},
-  chartOption: {
-    type: Object,
-    required: true
-  },
   data() {
     return {
       chartInstance: null,
       chartOption: {}
     }
   },
-  mounted() {
+  async mounted() {
+    await this.getChartData()
     this.initChart()
   },
   watch: {
@@ -31,6 +28,53 @@ export default {
     }
   },
   methods: {
+    async getChartData() {
+      const { data } = await getActivePowerLine({ type: '1' })
+      this.chartOption = {
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          top: '5%',
+          data: data.series.map(item => item.name),
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: data.categories,
+          axisLine: {
+            lineStyle: {
+              color: '#fff'
+            }
+          }
+        },
+        yAxis: {
+          type: 'value',
+          axisLine: {
+            lineStyle: {
+              color: "#fff"
+            }
+          }
+        },
+        series: data.series.map(item => {
+          return {
+            name: item.name,
+            type: 'line',
+            stack: 'Total',
+            data: item.data
+          }
+        })
+      };
+    },
     initChart() {
       let that = this
       this.chartInstance = echarts.init(this.$refs["lineChart"])

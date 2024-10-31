@@ -17,7 +17,7 @@
       </div>
     </div> -->
     <div class="sub-title">
-      <!-- 风光火储能源基地调控系统 -->
+      风光火储能源基地调控系统
     </div>
     <div class="charts-content">
       <div class="charts-left">
@@ -130,10 +130,21 @@ export default {
   height: 1000px;
 
   .sub-title {
-    font-size: 30px;
-    line-height: 60px;
-    height: 60px;
+    /* 自动布局子元素 */
+    font-family: HarmonyOS Sans SC;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 45px;
     text-align: center;
+    letter-spacing: 0px;
+
+    font-variation-settings: "opsz" auto;
+    background: linear-gradient(180deg, #E6F7FF 0%, rgba(230, 247, 255, 0) 168%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    z-index: 1;
   }
 
   .charts-content {

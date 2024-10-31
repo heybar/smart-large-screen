@@ -78,6 +78,7 @@ export default {
           }
         },
         yAxis: {
+          name: 'MWh',
           type: 'value',
           axisLine: {
             lineStyle: {
