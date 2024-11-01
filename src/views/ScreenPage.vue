@@ -42,10 +42,9 @@
           <!-- 地图 -->
           <Map :activePowerRespVO="activePowerRespVO"></Map>
         </div>
-        <div class="type-button">
-          <!--  -->
+        <!-- <div class="type-button">
           <ButtonGroup></ButtonGroup>
-        </div>
+        </div> -->
         <div class="line-chart">
           <LineChart></LineChart>
         </div>
@@ -198,14 +197,14 @@ export default {
         height: 540px;
       }
 
-      .type-button {
-        width: 100%;
-        height: 40px;
-      }
+      // .type-button {
+      //   width: 100%;
+      //   height: 40px;
+      // }
 
       .line-chart {
         width: 100%;
-        height: 320px;
+        height: 360px;
       }
     }
 

@@ -1,24 +1,5 @@
 <!-- 资产统计 -->
-<template>
-  <div class="button-group">
-    <button class="skew-button w-100 skew-selected">
-      <div>风电</div>
-    </button>
-    <button class="skew-button w-100 skew-selected">
-      <div>光电</div>
-    </button>
-    <button class="skew-button w-100">
-      <div>火电</div>
-    </button>
-    <button class="skew-button w-100">
-      <div>供热</div>
-    </button>
-    <button class="skew-button w-100">
-      <div>储能</div>
-    </button>
-
-  </div>
-</template>
+<template></template>
 
 <script>
 export default {
