@@ -20,7 +20,7 @@
           <div class="grid-content"></div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content  bottom-bd">风机数量</div>
+          <div class="grid-content  bottom-bd">风机数量(台)</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content  bottom-bd">{{ propertyRespVO.windNum }}</div>
@@ -44,7 +44,7 @@
           <div class="grid-content"></div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content bottom-bd">逆变器数量</div>
+          <div class="grid-content bottom-bd">逆变器数量(台)</div>
         </el-col>
         <el-col :span="4">
           <!-- <div class="grid-content bottom-bd">{{ propertyRespVO.lightNum }}</div> -->
@@ -94,7 +94,7 @@
           <div class="grid-content"></div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content bottom-bd">集装箱数量</div>
+          <div class="grid-content bottom-bd">集装箱数量(个)</div>
         </el-col>
         <el-col :span="4">
           <div class="grid-content bottom-bd">{{ propertyRespVO.storedNum }}</div>
