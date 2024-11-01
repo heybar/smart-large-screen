@@ -64,7 +64,7 @@ export default {
               }
             }),
             label: {
-              formatter: '{b} :   {c}',
+              formatter: '{b} (MWh) :   {c}',
               color: '#fff'
             },
             emphasis: {
