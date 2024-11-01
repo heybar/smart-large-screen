@@ -39,31 +39,14 @@
       </el-row>
       <el-row>
         <el-col :span="3">
-          <div class="grid-content1"><i class="iconfont icon-xudianchizhengchang"></i></div>
-        </el-col>
-        <el-col :span="7">
-          <div class="grid-content1">并网运行</div>
-          <div class="grid-content1">{{ unitStatusRespVO.storedRunSts }}</div>
-        </el-col>
-        <el-col :span="7">
-          <div class="grid-content1">待机</div>
-          <div class="grid-content1">{{ unitStatusRespVO.storedInterruptSts }}</div>
-        </el-col>
-        <el-col :span="7">
-          <div class="grid-content1">故障停机</div>
-          <div class="grid-content1">{{ unitStatusRespVO.storedStopSts }}</div>
-        </el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="3">
           <div class="grid-content1"><i class="iconfont icon-zhongwuranjuece"></i></div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content1">并网运行</div>
+          <div class="grid-content1">正常运行</div>
           <div class="grid-content1">{{ unitStatusRespVO.fireRunSts }}</div>
         </el-col>
         <el-col :span="7">
-          <div class="grid-content1">检修</div>
+          <div class="grid-content1">待机检修</div>
           <div class="grid-content1">{{ unitStatusRespVO.fireInterruptSts }}</div>
         </el-col>
         <el-col :span="7">
@@ -71,6 +54,24 @@
           <div class="grid-content1">{{ unitStatusRespVO.fireStopSts }}</div>
         </el-col>
       </el-row>
+      <el-row>
+        <el-col :span="3">
+          <div class="grid-content1"><i class="iconfont icon-xudianchizhengchang"></i></div>
+        </el-col>
+        <el-col :span="7">
+          <div class="grid-content1">正常运行</div>
+          <div class="grid-content1">{{ unitStatusRespVO.storedRunSts }}</div>
+        </el-col>
+        <el-col :span="7">
+          <div class="grid-content1">通讯中断</div>
+          <div class="grid-content1">{{ unitStatusRespVO.storedInterruptSts }}</div>
+        </el-col>
+        <el-col :span="7">
+          <div class="grid-content1">故障停机</div>
+          <div class="grid-content1">{{ unitStatusRespVO.storedStopSts }}</div>
+        </el-col>
+      </el-row>
+     
     </div>
   </div>
 </template>
@@ -79,7 +80,7 @@
 import '../assets/font/iconfont.css'
 export default {
   name: 'UnitStatus',
-  props: {
+  props: { 
     unitStatusRespVO: {
       type: Object,
       required: true

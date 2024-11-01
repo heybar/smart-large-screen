@@ -28,10 +28,10 @@
           <img class="inner-icon tree" src="../assets/pictures/tree.svg" alt="">
         </div>
         <div class="right-text">
-          <div class="i-title">相当于种植树木</div>
+          <div class="i-title">种植树木</div>
           <div>
             <div class="i-num">{{socialBenefitRespVO.thriftyCoalNum}}</div>
-            <div class="i-unit">根</div>
+            <div class="i-unit">棵</div>
           </div>
         </div>
       </div>
