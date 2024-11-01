@@ -23,16 +23,17 @@ export default {
     this.initChart()
     this.$bus.$on('update', () => {
       this.getChartData()
+      this.updateChart()
     })
   },
-  watch: {
-    chartData: {
-      handler: function (newVal) {
-        this.updateChart(newVal);
-      },
-      deep: true
-    }
-  },
+  // watch: {
+  //   chartData: {
+  //     handler: function (newVal) {
+  //       this.updateChart(newVal);
+  //     },
+  //     deep: true
+  //   }
+  // },
   methods: {
     async getChartData() {
       const { data } = await getGeneStatisticsPie()

@@ -76,7 +76,6 @@ import UnitStatus from '../components/UnitStatus';
 import SocialBenefits from '../components/SocialBenefits.vue';
 import Map from '../components/Map.vue';
 import LineChart from '../components/LineChart';
-import ButtonGroup from '../components/ButtonGroup';
 import { getHomeData } from '@/api/home'
 
 export default {
@@ -98,7 +97,6 @@ export default {
     SocialBenefits,
     Map,
     LineChart,
-    ButtonGroup
   },
   created() {
     this.initHomeData()
@@ -189,7 +187,7 @@ export default {
       height: 925px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
 
       // background-color: skyblue;
       .map {
@@ -201,7 +199,6 @@ export default {
       //   width: 100%;
       //   height: 40px;
       // }
-
       .line-chart {
         width: 100%;
         height: 360px;

@@ -2,23 +2,28 @@
 <template>
   <div class='line-container'>
     <div class="button-group">
-      <button class="skew-button w-100 skew-selected">
+      <button :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': this.activeType === '1' }"
+        @click="getChartData('1')">
         <div>风电</div>
       </button>
-      <button class="skew-button w-100 skew-selected">
+      <button :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': this.activeType === '2' }"
+        @click="getChartData('2')">
         <div>光电</div>
       </button>
-      <button class="skew-button w-100">
+      <button :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': this.activeType === '3' }"
+        @click="getChartData('3')">
         <div>火电</div>
       </button>
-      <button class="skew-button w-100">
+      <button :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': this.activeType === '4' }"
+        @click="getChartData('4')">
         <div>供热</div>
       </button>
-      <button class="skew-button w-100">
+      <button :class="{ 'btn': true, 'skew-button': true, 'w-100': true, 'skew-selected': this.activeType === '5' }"
+        @click="getChartData('5')">
         <div>储能</div>
       </button>
     </div>
-    <div class='line-chart' ref='lineChart'></div>
+    <div class='power-line-chart' ref='lineChart'></div>
   </div>
 </template>
 
@@ -34,30 +39,28 @@ export default {
     }
   },
   async mounted() {
-    await this.getChartData()
+    await this.getChartData('1')
     this.initChart()
+    this.$bus.$on('update', () => {
+      this.getChartData()
+      this.updateChart()
+    })
   },
-  watch: {
-    chartOption: {
-      handler: function (newVal) {
-        this.updateChart(newVal);
-      },
-      deep: true
-    }
-  },
+  // watch: {
+  //   chartOption: {
+  //     handler: function (newVal) {
+  //       this.updateChart(newVal);
+  //     },
+  //     deep: true
+  //   }
+  // },
   methods: {
-    async getChartData() {
-      const { data } = await getActivePowerLine({ type: '1' })
+    async getChartData(type) {
+      this.activeType = type
+      const { data } = await getActivePowerLine({ type: this.activeType })
       this.chartOption = {
         tooltip: {
           trigger: 'axis'
-        },
-        legend: {
-          top: '5%',
-          data: data.series.map(item => item.name),
-          textStyle: {
-            color: '#fff'
-          }
         },
         grid: {
           left: '3%',
@@ -76,6 +79,7 @@ export default {
           }
         },
         yAxis: {
+          name: 'MW',
           type: 'value',
           axisLine: {
             lineStyle: {
@@ -88,7 +92,8 @@ export default {
             name: item.name,
             type: 'line',
             stack: 'Total',
-            data: item.data
+            data: item.data,
+            smooth: true
           }
         })
       };
@@ -99,13 +104,6 @@ export default {
       this.chartOption = {
         tooltip: {
           trigger: 'axis'
-        },
-        legend: {
-          top: '5%',
-          data: ['风', '光', '火', '供热', '储能'],
-          textStyle: {
-            color: '#fff'
-          }
         },
         grid: {
           left: '3%',
@@ -124,6 +122,7 @@ export default {
           }
         },
         yAxis: {
+          name: 'MW',
           type: 'value',
           axisLine: {
             lineStyle: {
@@ -136,31 +135,36 @@ export default {
             name: '风',
             type: 'line',
             stack: 'Total',
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: [120, 132, 101, 134, 90, 230, 210],
+            smooth: true
           },
           {
             name: '光',
             type: 'line',
             stack: 'Total',
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: [220, 182, 191, 234, 290, 330, 310],
+            smooth: true
           },
           {
             name: '火',
             type: 'line',
             stack: 'Total',
-            data: [150, 232, 201, 154, 190, 330, 410]
+            data: [150, 232, 201, 154, 190, 330, 410],
+            smooth: true
           },
           {
             name: '供热',
             type: 'line',
             stack: 'Total',
-            data: [320, 332, 301, 334, 390, 330, 320]
+            data: [320, 332, 301, 334, 390, 330, 320],
+            smooth: true
           },
           {
             name: '储能',
             type: 'line',
             stack: 'Total',
-            data: [320, 332, 301, 334, 390, 330, 320]
+            data: [320, 332, 301, 334, 390, 330, 320],
+            smooth: true
           },
         ]
       };
@@ -171,21 +175,20 @@ export default {
 
     },
     updateChart() {
-      const option = {}
-      this.chartInstance.setOption(option)
-    }
+      this.chartInstance.setOption(this.chartOption)
+    },
   }
 }
 </script>
 <style lang='less' scoped>
 .line-container {
   width: 100%;
-  height: 280px;
+  height: 360px;
 }
 
-.line-chart {
-  width: 570px;
-  height: 280px;
+.power-line-chart {
+  width: 100%;
+  height: 320px;
 }
 
 .button-group {

@@ -32,19 +32,20 @@ export default {
       required: true
     }
   },
-  watch: {
-    chartData: {
-      handler: function (newVal) {
-        this.updateChart(newVal);
-      },
-      deep: true
-    }
-  },
+  // watch: {
+  //   chartData: {
+  //     handler: function (newVal) {
+  //       this.updateChart(newVal);
+  //     },
+  //     deep: true
+  //   }
+  // },
   async mounted() {
     await this.getChartData()
     this.initChart()
     this.$bus.$on('update', () => {
       this.getChartData()
+      this.updateChart()
     })
   },
   methods: {
