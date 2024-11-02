@@ -103,7 +103,7 @@ export default {
     setInterval(() => {
       this.$bus.$emit('update')
       this.initHomeData()
-    }, 600000);//600000
+    }, 5000);//600000
   },
   methods: {
     initHomeData() {

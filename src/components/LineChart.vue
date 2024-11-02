@@ -56,8 +56,11 @@ export default {
   // },
   methods: {
     async getChartData(type) {
-      this.activeType = type
+      if (type) {
+        this.activeType = type
+      }
       const { data } = await getActivePowerLine({ type: this.activeType })
+      // 有数据注释掉
       this.chartOption = {
         tooltip: {
           trigger: 'axis'

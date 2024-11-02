@@ -8,7 +8,7 @@
         <div class="right-text">
           <div class="i-title">清洁能源发电</div>
           <div>
-            <div class="i-num">{{socialBenefitRespVO.greenGeneCapa}}</div>
+            <div class="i-num">{{ toFixed(socialBenefitRespVO.greenGeneCapa) }}</div>
             <div class="i-unit">MWh</div>
           </div>
         </div>
@@ -18,7 +18,7 @@
         <div class="right-text">
           <div class="i-title">减碳排放量</div>
           <div>
-          <div class="i-num">{{socialBenefitRespVO.reduceCarbonOutNum}}</div>
+            <div class="i-num">{{ toFixed(socialBenefitRespVO.reduceCarbonOutNum) }}</div>
             <div class="i-unit">吨</div>
           </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="right-text">
           <div class="i-title">种植树木</div>
           <div>
-            <div class="i-num">{{socialBenefitRespVO.thriftyCoalNum}}</div>
+            <div class="i-num">{{ getInt(socialBenefitRespVO.thriftyCoalNum) }}</div>
             <div class="i-unit">棵</div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="right-text">
           <div class="i-title">节约标准煤</div>
           <div>
-            <div class="i-num">{{socialBenefitRespVO.equalTreeNum}}</div>
+            <div class="i-num">{{ socialBenefitRespVO.equalTreeNum }}</div>
             <div class="i-unit">吨</div>
           </div>
         </div>
@@ -63,6 +63,19 @@ export default {
       required: true
     }
   },
+  methods: {
+    toFixed(value) {
+      if (value && value.length > 9) {
+        return Math.round(value * 100) / 100
+      } else {
+        return value
+      }
+    },
+    getInt(value) {
+      return Math.ceil(value)
+    }
+
+  }
 }
 </script>
 

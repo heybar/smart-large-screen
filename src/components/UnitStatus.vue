@@ -5,7 +5,7 @@
     <div class="table-content">
       <el-row>
         <el-col :span="3">
-          <div><i class="iconfont icon-fengjilv"></i></div>
+          <div><img class="grid-img" src="../assets/pictures/wind.svg" alt=""></div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content1">正常运行</div>
@@ -22,7 +22,9 @@
       </el-row>
       <el-row>
         <el-col :span="3">
-          <div class="grid-content1"><i class="iconfont icon-guangfufadian"></i></div>
+          <div class="grid-content1">
+            <img class="grid-img" src="../assets/pictures/sun.svg" alt="">
+          </div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content1">正常运行</div>
@@ -39,7 +41,9 @@
       </el-row>
       <el-row>
         <el-col :span="3">
-          <div class="grid-content1"><i class="iconfont icon-zhongwuranjuece"></i></div>
+          <div class="grid-content1">
+            <img class="grid-img" src="../assets/pictures/battery.svg" alt="">
+          </div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content1">正常运行</div>
@@ -56,7 +60,9 @@
       </el-row>
       <el-row>
         <el-col :span="3">
-          <div class="grid-content1"><i class="iconfont icon-xudianchizhengchang"></i></div>
+          <div class="grid-content1">
+            <img class="grid-img" src="../assets/pictures/factory.svg" alt="">
+          </div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content1">正常运行</div>
@@ -71,7 +77,7 @@
           <div class="grid-content1">{{ unitStatusRespVO.storedStopSts }}</div>
         </el-col>
       </el-row>
-     
+
     </div>
   </div>
 </template>
@@ -80,7 +86,7 @@
 import '../assets/font/iconfont.css'
 export default {
   name: 'UnitStatus',
-  props: { 
+  props: {
     unitStatusRespVO: {
       type: Object,
       required: true
@@ -108,5 +114,10 @@ export default {
 
 .grid-content1 {
   font-size: 16px;
+}
+
+.grid-img {
+  width: 37px;
+  height: 37px;
 }
 </style>
