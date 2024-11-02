@@ -128,11 +128,11 @@ export default {
       div {
         .i-num {
           display: inline-block;
-          font-size: 32px;
+          font-size: 17px;
         }
 
         .i-unit {
-          font-size: 20px;
+          font-size: 17px;
           display: inline-block;
           font-weight: 100;
           margin-left: 10px;
