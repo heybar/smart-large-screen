@@ -2,23 +2,23 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ScreenPage from '@/views/ScreenPage'
 import Index from '@/views/Index'
-import SubPage from '@/views/SubPage'
+import EnergyCount from '@/views/EnergyCount'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/ScreenPage',
+    redirect: '/Index',
     component: Index,
     children: [
       {
-        path: '/ScreenPage',
-        component: ScreenPage
+        path: '/Index',
+        component: ScreenPage,
       },
       {
-        path: '/SubPage',
-        component: SubPage
-      },
+        path: '/EnergyCount',
+        component: EnergyCount,
+      }
     ]
   },
 

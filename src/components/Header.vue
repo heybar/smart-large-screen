@@ -2,13 +2,15 @@
   <div class="header">
     <div class="title">能源基地调控系统</div>
     <div class="menu">
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 1 }" @click="changeMenu(1)">首页</div>
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 2 }" @click="changeMenu(2)">能量检测</div>
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 3 }" @click="changeMenu(3)">能量管理</div>
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 4 }" @click="changeMenu(4)">源荷预测</div>
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 5 }" @click="changeMenu(5)">优化调度</div>
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 6 }" @click="changeMenu(6)">统计分析</div>
-      <div class="router-button" v-bind:class="{ active: this.activeIndex === 7 }" @click="changeMenu(7)">后台管理</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 'Index' }" @click="changeMenu('Index')">首页
+      </div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 'EnergyCount' }"
+        @click="changeMenu('EnergyCount')">能量检测</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 3 }" @click="changeMenu(3)">能量管理</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 4 }" @click="changeMenu(4)">源荷预测</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 5 }" @click="changeMenu(5)">优化调度</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 6 }" @click="changeMenu(6)">统计分析</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 7 }" @click="changeMenu(7)">后台管理</div>
     </div>
     <div class="clock">
       <div class="user">
@@ -27,13 +29,13 @@
 
 
 <script>
-
+import router from '../router/index';
 var icnow = new Date()
 var interval;
 export default {
   data() {
     return {
-      activeIndex: 1,
+      activeRouter: 'Index',
       year: icnow.getFullYear(),
       month: icnow.getMonth() + 1,
       date: icnow.getDate(),
@@ -45,9 +47,10 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    changeMenu(e) {
-      this.activeIndex = e
-      console.log(e);
+    changeMenu(path) {
+      this.activeRouter = path
+      router.push(path)
+      console.log(path);
     },
     getDate() {
       const now = new Date();
