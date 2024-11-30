@@ -9,29 +9,29 @@
     <div class="moudle">
       <div class="moudle-left">
         <div class="left-container">
-          综合指标
+          <ComprehensiveIndicators></ComprehensiveIndicators>
         </div>
         <div class="left-container">
-          状态统计
+          <StateStatistics></StateStatistics>
         </div>
         <div class="left-container">
-          空
+          <LeftTable></LeftTable>
         </div>
       </div>
       <div class="moudle-center">
         <div class="center-top-container">
-          <div>平均环境温度23</div>
+          <CenterTable></CenterTable>
         </div>
       </div>
       <div class="moudle-right">
         <div class="right-container">
-          风玫瑰图
+          <RoseTable></RoseTable>
         </div>
         <div class="right-container">
-          风速监测
+          <WindSpeed></WindSpeed>
         </div>
         <div class="right-container">
-          总功率监测
+          <TotalPower></TotalPower>
         </div>
       </div>
     </div>
@@ -39,9 +39,23 @@
 </template>
 
 <script>
-
+import ComprehensiveIndicators from "../components/energyCount/ComprehensiveIndicators.vue";
+import StateStatistics from "../components/energyCount/StateStatistics.vue";
+import LeftTable from "../components/energyCount/LeftTable.vue";
+import CenterTable from "../components/energyCount/CenterTable.vue";
+import RoseTable from "../components/energyCount/RoseTable.vue";
+import WindSpeed from "../components/energyCount/WindSpeed.vue";
+import TotalPower from "../components/energyCount/TotalPower.vue";
 export default {
-
+  components: {
+    ComprehensiveIndicators,
+    StateStatistics,
+    LeftTable,
+    CenterTable,
+    RoseTable,
+    WindSpeed,
+    TotalPower
+  }
 }
 </script>
 
