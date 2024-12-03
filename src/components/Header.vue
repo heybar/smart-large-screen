@@ -5,7 +5,7 @@
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 'Index' }" @click="changeMenu('Index')">首页
       </div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 'EnergyCount' }"
-        @click="changeMenu('EnergyCount')">能量检测</div>
+        @click="changeMenu('EnergyCount')">能量监测</div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 3 }" @click="changeMenu(3)">能量管理</div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 4 }" @click="changeMenu(4)">源荷预测</div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 5 }" @click="changeMenu(5)">优化调度</div>
