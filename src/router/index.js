@@ -3,6 +3,11 @@ import VueRouter from 'vue-router'
 import ScreenPage from '@/views/ScreenPage'
 import Index from '@/views/Index'
 import EnergyCount from '@/views/EnergyCount'
+import StatsAnalysis from '@/views/StatsAnalysis/Index'
+import PointData from '@/views/StatsAnalysis/PointData'
+import PredictData from '@/views/StatsAnalysis/PredictData'
+import SchedulingData from '@/views/StatsAnalysis/SchedulingData'
+import SchedulingAnalysis from '@/views/StatsAnalysis/SchedulingAnalysis'
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,7 +23,31 @@ const routes = [
       {
         path: '/EnergyCount',
         component: EnergyCount,
-      }
+      },
+      {
+        path: '/StatsAnalysis',
+        redirect: '/StatsAnalysis/PointData',
+        component: StatsAnalysis,
+        children: [
+          {
+            path: '/StatsAnalysis/PointData',
+            component: PointData,
+          },
+          {
+            path: '/StatsAnalysis/PredictData',
+            component: PredictData,
+          },
+          {
+            path: '/StatsAnalysis/SchedulingData',
+            component: SchedulingData,
+          },
+          {
+            path: '/StatsAnalysis/SchedulingAnalysis',
+            component: SchedulingAnalysis,
+          }
+        ]
+      },
+
     ]
   },
 
