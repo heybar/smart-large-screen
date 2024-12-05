@@ -11,7 +11,7 @@ html {
   height: 100%;
   color: #eee;
   /* overflow: hidden;*/
-  background: url(../pictures/bg.png);
+  background: url(../pictures/bg.png) no-repeat;
   /* background-color: #061f48; */
   background-size: 100% auto;
   scrollbar-width: none;
@@ -115,6 +115,7 @@ body {
   padding-left: 40px;
   line-height: 50px;
 }
+
 .left-title {
   background: url(../pictures/right_title_bg.png);
   background-size: 100% 100%;

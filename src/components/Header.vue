@@ -9,7 +9,8 @@
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 3 }" @click="changeMenu(3)">能量管理</div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 4 }" @click="changeMenu(4)">源荷预测</div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 5 }" @click="changeMenu(5)">优化调度</div>
-      <div class="router-button" v-bind:class="{ active: this.activeRouter === 6 }" @click="changeMenu(6)">统计分析</div>
+      <div class="router-button" v-bind:class="{ active: this.activeRouter === 'StatsAnalysis' }"
+        @click="changeMenu('StatsAnalysis')">统计分析</div>
       <div class="router-button" v-bind:class="{ active: this.activeRouter === 7 }" @click="changeMenu(7)">后台管理</div>
     </div>
     <div class="clock">
