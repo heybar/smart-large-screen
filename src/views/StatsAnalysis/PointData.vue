@@ -163,7 +163,7 @@ export default {
     display: flex;
     background-color: aliceblue;
     .selected-option {
-      margin-top: 20px;
+      margin-top: 30px;
       margin-left: 20px;
       display: flex;
       padding: 0px;
@@ -189,7 +189,7 @@ export default {
       }
       .data-export {
         
-        padding: 10px;
+        padding: 7px;
         border-radius: 5px;
         cursor: pointer;
       }

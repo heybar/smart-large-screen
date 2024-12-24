@@ -49,8 +49,8 @@ export default {
       console.log(tab, event);
     },
     changeMenu(path) {
-      this.activeRouter = path
-      router.push(path)
+      this.activeRouter = path;
+      router.push(`/${path}`);
       console.log(path);
     },
     getDate() {
