@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="chart-container">
+    <div class="point-chart-container">
       <div class="data-table">
         <el-table
             ref="multipleTable"
@@ -195,10 +195,10 @@ export default {
       }
     }
   }
-  .chart-container {
+  .point-chart-container {
     background-color: #fff;
     margin-top: 0px;
-    height: 735px;
+    height: 810px;
     .data-table {
       width: 100%;
       height: 600px;

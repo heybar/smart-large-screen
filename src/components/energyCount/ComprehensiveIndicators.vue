@@ -1,7 +1,7 @@
 <template>
 <div class="comprehensive-indicators">
     <div class="indicator-title">
-        <h2>综合指标</h2>
+        <div class="chart-title left-title">综合指标</div>
     </div>
 </div>
 </template>

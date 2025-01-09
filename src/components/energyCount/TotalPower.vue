@@ -1,7 +1,7 @@
 <template>
     <div class="total-power">
         <div class="power-title">
-            <h2>总功率监测</h2>
+            <div class="chart-title right-title">总功率监测</div>
         </div>
     </div>
 </template>

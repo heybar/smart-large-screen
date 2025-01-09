@@ -87,30 +87,30 @@ export default {
     .moudle-left {
       width: 570px;
       height: 900px;
-      border: 1px solid red;
+      // border: 1px solid red;
       margin-top: 25px;
       .left-container {
         width: 100%;
         height: 300px;
-        border: 1px solid black;
+        // border: 1px solid black;
       }
     }
     .moudle-center {
       width: 700px;
       height: 900px;
       display: flex;
-      border: 1px solid green;
+      // border: 1px solid green;
       margin-top: 25px;
     }
     .moudle-right {
       width: 570px;
       height: 900px;
-      border: 1px solid blue;
+      // border: 1px solid blue;
       margin-top: 25px;
       .right-container {
         width: 100%;
         height: 300px;
-        border: 1px solid black;
+        // border: 1px solid black;
       }
     }
   }

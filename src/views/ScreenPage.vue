@@ -147,10 +147,10 @@ export default {
   .charts-content {
     display: flex;
     justify-content: space-around;
-
+    height: 1000px;
     .charts-left {
       width: 570px;
-      height: 925px;
+      height: 950px;
       // background-color: skyblue;
       display: flex;
       flex-direction: column;

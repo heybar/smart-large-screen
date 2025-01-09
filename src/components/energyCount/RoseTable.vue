@@ -1,7 +1,7 @@
 <template>
     <div class="rose-table">
         <div class="rose-title">
-            <h2>风玫瑰图</h2>
+            <div class="chart-title right-title">风玫瑰图</div>
         </div>
     </div>
 </template>

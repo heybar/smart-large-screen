@@ -24,7 +24,7 @@
            
             
         </div>
-        <div class="chart-container">
+        <div class="predict-chart-container">
             <!-- 这里可以放置曲线图 -->
             <!-- <canvas id="powerChart"></canvas> -->
             <div class="data-table">
@@ -130,9 +130,10 @@ export default {
             margin-top: 10px;
         }
     }
-    .chart-container {
+    .predict-chart-container {
         margin-top: 0px;
-
+        background-color: #fff;
+        height: 830px;
         .data-table {
             height: 600px;
             width: 100%;
