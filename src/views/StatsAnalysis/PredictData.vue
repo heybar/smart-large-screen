@@ -5,7 +5,7 @@
                 <el-form :inline="true" model="formInline" >
                     <el-form-item label="切换显示方式" class="switch" >
                         <el-switch
-                        v-model="value"
+                        v-model="displayStatus"
                         active-color="green"
                         inactive-color="white">
                         </el-switch>
@@ -25,61 +25,35 @@
             
         </div>
         <div class="predict-chart-container">
-            <!-- 这里可以放置曲线图 -->
-            <!-- <canvas id="powerChart"></canvas> -->
-            <div class="data-table">
+            <div v-if="displayStatus" class="data-table">
                 <el-table
-                    ref="multipleTable"
-                    :data="tableData"
-                    tooltip-effect="dark"
-                    style="width: 100%"
-                    @selection-change="handleSelectionChange">
-                    <el-table-column
-                        type="selection"
-                        width="100">
-                    </el-table-column>
-                    <el-table-column
-                        label="序号"
-                        type="index"
-                        width="150">
-                    </el-table-column>
-                    <el-table-column
-                        label="测点名"
-                        width="250"
-                        prop="pointName">
-                    </el-table-column>
-                    <el-table-column
-                        prop="pointNo"
-                        label="测点号"
-                        width="250">
-                    </el-table-column>
-                    <el-table-column
-                        prop="pointDesc"
-                        label="测点描述"
-                        width="400">
-                    </el-table-column>
-                    <el-table-column
-                        prop="siteType"
-                        label="场站类型"
-                        width="250">
-                    </el-table-column>
-                    <el-table-column
-                        prop="pointCode"
-                        label="测点编码"
-                        width="250">
-                    </el-table-column>
-                    <el-table-column
-                        prop="notes"
-                        label="备注"
-                        width="250">
-                    </el-table-column>
+                ref="multipleTable"
+                :data="tableData"
+                tooltip-effect="dark"
+                style="width: 100%"
+                @selection-change="handleSelectionChange"
+                >
+                <el-table-column type="selection" width="100"> </el-table-column>
+                <el-table-column label="序号" type="index" width="150">
+                </el-table-column>
+                <el-table-column label="测点名" width="250" prop="pointName">
+                </el-table-column>
+                <el-table-column prop="pointNo" label="测点号" width="250">
+                </el-table-column>
+                <el-table-column prop="pointDesc" label="测点描述" width="400">
+                </el-table-column>
+                <el-table-column prop="siteType" label="场站类型" width="250">
+                </el-table-column>
+                <el-table-column prop="pointCode" label="测点编码" width="250">
+                </el-table-column>
+                <el-table-column prop="notes" label="备注" width="250">
+                </el-table-column>
                 </el-table>
             </div>
+            <!-- 这里可以放置曲线图 -->
+            <EchatrsComp v-show="!displayStatus" :config="getChartData" />
             <div class="data-pagination">
-                <el-pagination
-                    background
-                    layout="prev, pager, next"
-                    :total="1000" >
+                <el-pagination background layout="prev, pager, next" :total="1000">
                 </el-pagination>
             </div>
         </div>
@@ -87,12 +61,40 @@
 </template>
 
 <script >
+import EchatrsComp from "../../components/EchatrsComp.vue";
 export default {
     data() {
         return {
             value: true,
+            displayStatus: true,
+            tableData: [],
+            charsData: [820, 932, 901, 934, 1290, 1330, 1320],
         }
-    }
+    },
+    components: { EchatrsComp },
+    computed: {
+        getChartData: function () {
+        const config = ["AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG"];
+        let option = {
+            xAxis: {
+            type: "category",
+            data: config,
+            },
+            yAxis: {
+            type: "value",
+            },
+            series: [
+            {
+                data: this.charsData,
+                type: "line",
+                smooth: true,
+            },
+            ],
+        };
+        return option;
+        },
+    },
+    methods: {},
 }
 </script>
 
