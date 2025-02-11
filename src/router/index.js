@@ -8,6 +8,7 @@ import PointData from '@/views/StatsAnalysis/PointData'
 import PredictData from '@/views/StatsAnalysis/PredictData'
 import SchedulingData from '@/views/StatsAnalysis/SchedulingData'
 import SchedulingAnalysis from '@/views/StatsAnalysis/SchedulingAnalysis'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -36,14 +37,17 @@ const routes = [
           {
             path: '/StatsAnalysis/PredictData',
             component: PredictData,
+            name: 'PredictData'
           },
           {
             path: '/StatsAnalysis/SchedulingData',
             component: SchedulingData,
+            name: "SchedulingData"
           },
           {
             path: '/StatsAnalysis/SchedulingAnalysis',
             component: SchedulingAnalysis,
+            name: "SchedulingAnalysis"
           }
         ]
       },

@@ -19,16 +19,22 @@
       </div>
       <div class="right-option">
         <div class="data-compare">
-          <div class="data-compare-picture"> <img src="../../assets/pictures/data-compare.svg" alt=""></div>
-          <div class="data-compare-text">数据对比</div>
+          <el-button class="data-compare-button" @click="compareData">
+            <div class="data-compare-picture"> <img src="../../assets/pictures/data-compare.svg" alt=""></div>
+            <div class="data-compare-text">数据对比</div>
+          </el-button>
         </div>
         <div class="data-display">
-          <div class="data-display-picture"><img src="../../assets/pictures/data-display.svg" alt=""></div>
-          <div class="data-display-text">数据显示</div>
+          <el-button class="data-display-button" @click="displayData" >
+            <div class="data-display-picture"><img src="../../assets/pictures/data-display.svg" alt=""></div>
+            <div class="data-display-text">数据显示</div>
+          </el-button>
         </div>
         <div class="data-export">
-          <div class="data-export-picture"><img src="../../assets/pictures/data-export.svg" alt=""></div>
-          <div class="data-export-text">数据导出</div>
+          <el-button class="data-export-button">
+            <div class="data-export-picture"><img src="../../assets/pictures/data-export.svg" alt=""></div>
+            <div class="data-export-text">数据导出</div>
+          </el-button>
         </div>
       </div>
     </div>
@@ -146,12 +152,41 @@ export default {
           notes: '备注5',
         },
       ],
+      selectedRows: [],
     };
   },
   methods: {
     onSubmit() {
       console.log(this.formInline);
     },
+    handleSelectionChange(selection) {
+      this.selectedRows = selection;
+      console.log(this.selectedRows);
+    },
+    //数据显示
+    displayData() {
+      if (this.selectedRows.length > 0) {
+        console.log('选中的数据'+this.selectedRows);
+        // 这里可以根据选中的行数据进行进一步的数据展示逻辑
+        // 例如，调用一个API来获取关联数据，或者在当前页面弹出一个对话框来显示数据
+        this.$router.push({name: 'PredictData',params: { data: this.selectedRows}})
+      } else {
+        console.log('没有选中数据');
+        // 提示用户选择数据
+      }
+    },
+    //数据对比
+    compareData() {
+      console.log('数据对比');
+      if(this.selectedRows.length >= 2){
+        this.$router.push({name: 'SchedulingAnalysis',params: { data: this.selectedRows}})
+      } else {
+        console.log('请选择两个或两个以上的测点进行数据对比');
+        // 提示用户选择数据
+      }
+      // 这里可以根据选中的行数据进行数据对比逻辑
+      // 例如，调用一个API来获取关联数据，或者在当前页面弹出一个对话框来显示数据
+    }
   },
 };
 </script>

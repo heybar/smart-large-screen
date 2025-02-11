@@ -63,13 +63,68 @@
 <script >
 import EchatrsComp from "../../components/EchatrsComp.vue";
 export default {
+    name: "PredictData",
     data() {
         return {
             value: true,
             displayStatus: true,
-            tableData: [],
+            predictData: [],
+            tableData: [
+            {
+                pointName: "测点1",
+                pointNo: "1001",
+                pointDesc: "测点1描述",
+                siteType: "场站类型1",
+                pointCode: "1001001",
+                notes: "备注1",
+            },
+            {
+                pointName: "测点2",
+                pointNo: "1002",
+                pointDesc: "测点2描述",
+                siteType: "场站类型2",
+                pointCode: "1002001",
+                notes: "备注2",
+            },
+            {
+                pointName: "测点3",
+                pointNo: "1003",
+                pointDesc: "测点3描述",
+                siteType: "场站类型3",
+                pointCode: "1003001",
+                notes: "备注3",
+            },
+            {
+                pointName: "测点4",
+                pointNo: "1004",
+                pointDesc: "测点4描述",
+                siteType: "场站类型4",
+                pointCode: "1004001",
+                notes: "备注4",
+            },
+            {
+                pointName: "测点5",
+                pointNo: "1005",
+                pointDesc: "测点5描述",
+                siteType: "场站类型5",
+                pointCode: "1005001",
+                notes: "备注5",
+            },
+            {
+                pointName: "测点6",
+                pointNo: "1006",
+                pointDesc: "测点6描述",
+                siteType: "场站类型6",
+                pointCode: "1006001",
+                notes: "备注6",
+            },
+            
+            ],
             charsData: [820, 932, 901, 934, 1290, 1330, 1320],
         }
+    },
+    created(){
+        this.predictData = this.$VueRouter.params.data || [];
     },
     components: { EchatrsComp },
     computed: {
