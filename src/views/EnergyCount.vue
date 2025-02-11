@@ -1,10 +1,15 @@
 <template>
   <div class="energy-count">
     <div class="energy-count-title">
-      <h1 class="title-button">风电场监测</h1>
-      <h1 class="title-button">光伏电站监测</h1>
-      <h1 class="title-button">火电厂监测</h1>
-      <h1 class="title-button">储能电站监测</h1>
+      <div
+        v-for="(item, index) in titleMapList"
+        :key="item.key"
+        class="title-item"
+        :class="{ active: currIndex === index }"
+        @click="changeTitle(index)"
+      >
+        {{ item.title }}
+      </div>
     </div>
     <div class="moudle">
       <div class="moudle-left">
@@ -12,26 +17,15 @@
           <ComprehensiveIndicators></ComprehensiveIndicators>
         </div>
         <div class="left-container">
-          <StateStatistics></StateStatistics>
+          <AlwaysPower></AlwaysPower>
         </div>
         <div class="left-container">
-          <LeftTable></LeftTable>
+          <StateStatistics></StateStatistics>
         </div>
       </div>
       <div class="moudle-center">
         <div class="center-top-container">
-          <CenterTable></CenterTable>
-        </div>
-      </div>
-      <div class="moudle-right">
-        <div class="right-container">
-          <RoseTable></RoseTable>
-        </div>
-        <div class="right-container">
-          <WindSpeed></WindSpeed>
-        </div>
-        <div class="right-container">
-          <TotalPower></TotalPower>
+          <EnergyCenter></EnergyCenter>
         </div>
       </div>
     </div>
@@ -39,78 +33,95 @@
 </template>
 
 <script>
-import ComprehensiveIndicators from "../components/energyCount/ComprehensiveIndicators.vue";
-import StateStatistics from "../components/energyCount/StateStatistics.vue";
-import LeftTable from "../components/energyCount/LeftTable.vue";
-import CenterTable from "../components/energyCount/CenterTable.vue";
-import RoseTable from "../components/energyCount/RoseTable.vue";
-import WindSpeed from "../components/energyCount/WindSpeed.vue";
-import TotalPower from "../components/energyCount/TotalPower.vue";
+import ComprehensiveIndicators from '../components/energyCount/ComprehensiveIndicators.vue';
+import StateStatistics from '../components/energyCount/StateStatistics.vue';
+import AlwaysPower from '../components/energyCount/AlwaysPower.vue';
+import EnergyCenter from '../components/energyCount/EnergyCenter.vue';
+import RoseTable from '../components/energyCount/RoseTable.vue';
+import WindSpeed from '../components/energyCount/WindSpeed.vue';
+import TotalPower from '../components/energyCount/TotalPower.vue';
 export default {
   components: {
     ComprehensiveIndicators,
     StateStatistics,
-    LeftTable,
-    CenterTable,
+    AlwaysPower,
+    EnergyCenter,
     RoseTable,
     WindSpeed,
-    TotalPower
-  }
-}
+    TotalPower,
+  },
+
+  data() {
+    return {
+      currIndex: 0,
+
+      titleMapList: [
+        { title: '风电场', key: 0 },
+        { title: '光伏电站', key: 1 },
+        { title: '火电厂', key: 2 },
+        { title: '储能电站', key: 3 },
+      ],
+    };
+  },
+
+  created() {},
+
+  methods: {
+    changeTitle(index) {
+      this.currIndex = index;
+    },
+  },
+};
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 .energy-count {
   width: 1920px;
   height: 1000px;
+  overflow: hidden;
   .energy-count-title {
     width: 1000px;
-    margin-left: 450px;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    h1 {
-      font-size: 20px;
-      font-weight: bold;
+    margin: 20px auto 0;
+
+    .title-item {
+      font-size: 28px;
       color: white;
       cursor: pointer;
+      transition: color 0.2s;
       &:hover {
-        color: blue;
+        color: #409eff;
+      }
+
+      &.active {
+        color: #409eff;
       }
     }
   }
 
   .moudle {
     display: flex;
-    justify-content: space-between;
+    margin-top: 12px;
+    height: calc(100% - 60px);
     .moudle-left {
-      width: 570px;
-      height: 900px;
-      // border: 1px solid red;
-      margin-top: 25px;
+      width: 470px;
+      height: 100%;
+      padding-right: 60px;
+      flex-shrink: 0;
       .left-container {
         width: 100%;
-        height: 300px;
-        // border: 1px solid black;
+        height: 33.1%;
+        overflow: hidden;
       }
     }
     .moudle-center {
-      width: 700px;
-      height: 900px;
-      display: flex;
-      // border: 1px solid green;
-      margin-top: 25px;
-    }
-    .moudle-right {
-      width: 570px;
-      height: 900px;
-      // border: 1px solid blue;
-      margin-top: 25px;
-      .right-container {
+      flex: 1;
+      width: calc(100% - 470px);
+      .center-top-container {
         width: 100%;
-        height: 300px;
-        // border: 1px solid black;
+        height: 100%;
       }
     }
   }
